@@ -63,12 +63,19 @@ public class Zodiac extends Fragment {
         return rootView;
     }
 
-    public void onEnterYear(int year) {
+    public void onEnterYear() { //I want this to be an on-click.
 
+        int year = 0;
         String textInEditText = mEditText.getText().toString();
 
-        textInEditText.
-        if(textInEditText instanceof int);
+
+        try {
+            year = Integer.parseInt(textInEditText);
+        } catch (TypeNotPresentException e) { //Is this the type of exception I want?
+            mTextView.setVisibility(View.VISIBLE);
+            mTextView.setText(getString(R.string.invalid_date));
+        }
+
         String yearText;
 
         //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
@@ -115,7 +122,7 @@ public class Zodiac extends Fragment {
                 yearText = getString(R.string.sheep);
                 break;
             default:
-                yearText = "You did not provide a valid year.";
+                yearText = "You did not provide a valid date.";
         }
         mTextView.setVisibility(View.VISIBLE);
         mTextView1.setText(yearText);
