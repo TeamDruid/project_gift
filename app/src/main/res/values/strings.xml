@@ -3,6 +3,9 @@
 
     <string name="app_name">gifted</string>
     <string name="action_settings">Settings</string>
+    <string name="druid_question">Is the gift recipient a Druid?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="enter_birthday">Please enter your date of birth in the fields below.</string>
     <string name="year_hint">YYYY</string>
     <string name="month_hint">MM</string>
@@ -22,6 +25,7 @@
     <string name="your_zodiac_sign_is">Your zodiac sign is…</string>
     <string name="search">What\'s my zodiac sign?</string>
     <string name="invalid_date">You did not provide a valid date.</string>
+
 
 
 </resources>
