@@ -38,6 +38,17 @@
             android:layout_height="match_parent"
             android:layout_weight="1"/>
 
-
         </LinearLayout>
+
+    <TextView
+        android:id="@+id/your_zodiac_sign_is"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/your_zodiac_sign_is"/>
+
+    <TextView
+        android:id="@+id/zodiac_sign"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
 </LinearLayout>

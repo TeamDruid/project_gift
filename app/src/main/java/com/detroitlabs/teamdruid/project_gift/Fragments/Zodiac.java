@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.detroitlabs.teamdruid.project_gift.R;
 
@@ -12,6 +14,11 @@ import com.detroitlabs.teamdruid.project_gift.R;
  * Created by admin on 11/3/14.
  */
 public class Zodiac extends Fragment {
+    private TextView mTextView;
+
+    public TextView getLinearLayout() {
+        return mTextView;
+    }
 
     //I have no idea what to put in here.
 
@@ -26,6 +33,9 @@ public class Zodiac extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_zodiac, container, false);
+
+        mTextView = (TextView) rootView.findViewById(R.id.zodiac_sign);
+
         return rootView;
     }
 
