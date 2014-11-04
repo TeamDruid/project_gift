@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.detroitlabs.teamdruid.project_gift.R;
@@ -15,6 +17,8 @@ import com.detroitlabs.teamdruid.project_gift.R;
 public class Zodiac extends Fragment {
     private TextView mTextView;
     private TextView mTextView1;
+    private EditText mEditText;
+    private Button mButton;
 
     //Getter methods may come in handy later.
     public TextView getTextView() {
@@ -23,6 +27,14 @@ public class Zodiac extends Fragment {
 
     public TextView getTextView1() {
         return mTextView1;
+    }
+
+    public EditText getEditText() {
+        return mEditText;
+    }
+
+    public Button getButton() {
+        return mButton;
     }
 
     //I have no idea what to put in here.
@@ -41,12 +53,22 @@ public class Zodiac extends Fragment {
 
         mTextView = (TextView) rootView.findViewById(R.id.your_zodiac_sign_is);
         mTextView.setVisibility(View.INVISIBLE);
+
         mTextView1 = (TextView) rootView.findViewById(R.id.zodiac_sign);
+
+        mEditText = (EditText) rootView.findViewById(R.id.year);
+
+        mButton = (Button) rootView.findViewById(R.id.search_button);
 
         return rootView;
     }
 
     public void onEnterYear(int year) {
+
+        String textInEditText = mEditText.getText().toString();
+
+        textInEditText.
+        if(textInEditText instanceof int);
         String yearText;
 
         //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.

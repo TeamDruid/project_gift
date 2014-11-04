@@ -21,5 +21,6 @@
     <string name="rabbit">Rabbit</string>
     <string name="dog">Dog</string>
     <string name="your_zodiac_sign_is">Your zodiac sign is...</string>
+    <string name="search">What's my zodiac sign?</string>
 
 </resources>
