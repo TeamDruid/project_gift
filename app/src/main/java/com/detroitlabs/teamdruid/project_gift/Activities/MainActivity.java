@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 import com.detroitlabs.teamdruid.project_gift.Fragments.MainFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 public class MainActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
