@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.detroitlabs.teamdruid.project_gift.R;
@@ -15,9 +14,14 @@ import com.detroitlabs.teamdruid.project_gift.R;
  */
 public class Zodiac extends Fragment {
     private TextView mTextView;
+    private TextView mTextView1;
 
-    public TextView getLinearLayout() {
+    public TextView getTextView() {
         return mTextView;
+    }
+
+    public TextView getTextView1() {
+        return mTextView1;
     }
 
     //I have no idea what to put in here.
@@ -34,7 +38,9 @@ public class Zodiac extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_zodiac, container, false);
 
-        mTextView = (TextView) rootView.findViewById(R.id.zodiac_sign);
+        mTextView = (TextView) rootView.findViewById(R.id.your_zodiac_sign_is);
+        mTextView.setVisibility(View.INVISIBLE);
+        mTextView1 = (TextView) rootView.findViewById(R.id.zodiac_sign);
 
         return rootView;
     }
@@ -88,6 +94,7 @@ public class Zodiac extends Fragment {
             default:
                 yearText = "You did not provide a valid year.";
         }
-        mTextView.setText(yearText);
+        mTextView.setVisibility(View.VISIBLE);
+        mTextView1.setText(yearText);
     }
 }
