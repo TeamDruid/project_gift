@@ -16,6 +16,7 @@ public class Zodiac extends Fragment {
     private TextView mTextView;
     private TextView mTextView1;
 
+    //Getter methods may come in handy later.
     public TextView getTextView() {
         return mTextView;
     }
