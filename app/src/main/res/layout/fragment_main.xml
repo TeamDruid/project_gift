@@ -1,16 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$PlaceholderFragment">
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#f9ebd7"
+    android:weightSum="10
+    ">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/ghost"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="120dip"
+        android:layout_gravity="center"
+        android:textColor="#ef0000"
+        android:layout_marginTop="70dp"
+        android:text="Gifted"
+        android:layout_weight="4"/>
+    <TextView
+        android:id="@+id/boiler_plate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="25dp"
+        android:text="For that one of a kind gift"
+        android:layout_weight="4"
+        android:layout_marginBottom="15dp"/>
 
-</RelativeLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="30dp"
+       android:orientation="horizontal"
+       android:layout_weight="2"
+       android:weightSum="4"
+       android:layout_marginBottom="50dp"
+       >
+    <TextView
+        android:layout_width="2.5dp"
+        android:layout_height="2.5dp"
+        android:layout_weight=".25"/>
+    <Button
+       android:id="@+id/druid_button"
+       android:layout_width="30dp"
+       android:layout_height="match_parent"
+       android:textColor="#f9ebd7"
+       android:text="Druid?"
+       android:layout_weight="1"
+       android:background="@drawable/round_edge_button"/>
+       <TextView
+           android:layout_width="2.5dp"
+           android:layout_height="2.5dp"
+           android:layout_weight=".25"/>
+    <Button
+       android:id="@+id/interests_button"
+       android:layout_width="30dp"
+       android:layout_height="match_parent"
+       android:textColor="#f9ebd7"
+       android:text="Interests"
+       android:layout_weight="1"
+       android:background="@drawable/round_edge_button"/>
+       <TextView
+           android:layout_width="2.5dp"
+           android:layout_height="2.5dp"
+           android:layout_weight=".25"/>
+   <Button
+       android:id="@+id/zodiac_button"
+       android:layout_width="30dp"
+       android:layout_height="match_parent"
+       android:textColor="#f9ebd7"
+       android:text="Zodiac"
+       android:layout_weight="1"
+       android:background="@drawable/round_edge_button"/>
+       <TextView
+           android:layout_width="2.5dp"
+           android:layout_height="2.5dp"
+           android:layout_weight=".25"/>
+   </LinearLayout>
+
+
+</LinearLayout>
