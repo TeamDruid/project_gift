@@ -85,6 +85,9 @@ public class Zodiac extends Fragment {
             case 11:
                 yearText = getString(R.string.sheep);
                 break;
+            default:
+                yearText = "You did not provide a valid year.";
         }
+        mTextView.setText(yearText);
     }
 }
