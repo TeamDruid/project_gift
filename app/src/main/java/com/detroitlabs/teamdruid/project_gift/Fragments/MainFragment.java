@@ -38,7 +38,8 @@ public class MainFragment extends Fragment {
         // text view label
         TextView txtGhost = (TextView) rootView.findViewById(R.id.ghost);
         TextView txtBoilerPlate = (TextView) rootView.findViewById(R.id.boiler_plate);
-        TextView txtDruid = (TextView) rootView.findViewById(R.id.druid_button);
+            //KO - Changing txtDruid to a button to connect to Dan's fragment.
+        Button txtDruid = (Button) rootView.findViewById(R.id.druid_button);
         TextView txtInterests = (TextView) rootView.findViewById(R.id.interests_button);
             //KO - I changed txtZodiac to a Button so I can connect it to my fragment.
         Button txtZodiac= (Button) rootView.findViewById(R.id.zodiac_button);
@@ -69,12 +70,30 @@ public class MainFragment extends Fragment {
                     fragmentTransaction.add(R.id.container, zodiac);
                     Log.v(LOG_TAG, "*********put the Zodiac fragment on screen");
                     fragmentTransaction.commit();
-                    Log.v(LOG_TAG, "********committing the fragment");
+                    Log.v(LOG_TAG, "********committing the Zodiac fragment");
 
                 }
             }
         });
 
+        txtDruid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                final Druid druid = new Druid();
+
+                if (fragmentTransaction.isEmpty()) {
+
+                    // Commit the transaction
+                    fragmentTransaction.add(R.id.container, druid);
+                    Log.v(LOG_TAG, "*********put the Druid fragment on screen");
+                    fragmentTransaction.commit();
+                    Log.v(LOG_TAG, "********committing the Druid fragment");
+
+                }
+            }
+        });
         return rootView;
     }
 }
