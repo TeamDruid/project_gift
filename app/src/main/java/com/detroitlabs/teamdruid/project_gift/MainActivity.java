@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
 
+import com.detroitlabs.teamdruid.project_gift.Fragments.Zodiac;
 
 
 public class MainActivity extends Activity {
@@ -61,4 +63,13 @@ public class MainActivity extends Activity {
             return rootView;
         }
     }
+
+
+    //Making changes here, and to fragment_main layout to get to my own fragment
+    private Button mButton;
+    private Fragment myFragment = new Zodiac();
+
+    
+
+
 }
