@@ -3,7 +3,9 @@ package com.detroitlabs.teamdruid.project_gift;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +18,8 @@ import com.detroitlabs.teamdruid.project_gift.Fragments.Zodiac;
 
 
 public class MainActivity extends Activity {
+
+    public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,20 +60,36 @@ public class MainActivity extends Activity {
         public PlaceholderFragment() {
         }
 
+        //Making changes here, and to fragment_main layout to get to my own fragment
+        private Button mButton;
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            mButton = (Button) rootView.findViewById(R.id.get_to_zodiac);
+            mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    final Zodiac zodiac = new Zodiac();
+
+                    if (fragmentTransaction.isEmpty()) {
+
+
+                        // Commit the transaction
+                        fragmentTransaction.add(R.id.container, zodiac);
+                        Log.v(LOG_TAG, "*********put the Zodiac fragment at the top");
+                        fragmentTransaction.commit();
+                        Log.v(LOG_TAG, "********COMMITTING!!");
+
+                    }
+                }
+            });
+
             return rootView;
         }
     }
-
-
-    //Making changes here, and to fragment_main layout to get to my own fragment
-    private Button mButton;
-    private Fragment myFragment = new Zodiac();
-
-    
-
-
 }
