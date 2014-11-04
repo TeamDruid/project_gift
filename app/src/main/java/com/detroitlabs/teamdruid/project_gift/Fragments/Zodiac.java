@@ -59,72 +59,76 @@ public class Zodiac extends Fragment {
         mEditText = (EditText) rootView.findViewById(R.id.year);
 
         mButton = (Button) rootView.findViewById(R.id.search_button);
+        mButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {//I want this to be an on-click.
+
+            int year = 0;
+            String textInEditText = mEditText.getText().toString();
+
+
+            try {
+                year = Integer.parseInt(textInEditText);
+            } catch (TypeNotPresentException e) { //Is this the type of exception I want?
+                mTextView.setVisibility(View.VISIBLE);
+                mTextView.setText(getString(R.string.invalid_date));
+            }
+
+            String yearText;
+
+            //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
+            //I could replace this with an API call. Are there Chinese zodiac APIs?
+
+            //http://www.softpedia.com/get/Programming/SDK-DDK/Horoscope-API.shtml
+
+
+            switch (year % 12) {
+                case 0:
+                    yearText = getString(R.string.monkey);
+                    break;
+                case 1:
+                    yearText = getString(R.string.rooster);
+                    break;
+                case 2:
+                    yearText = getString(R.string.dog);
+                    break;
+                case 3:
+                    yearText = getString(R.string.pig);
+                    break;
+                case 4:
+                    yearText = getString(R.string.rat);
+                    break;
+                case 5:
+                    yearText = getString(R.string.ox);
+                    break;
+                case 6:
+                    yearText = getString(R.string.tiger);
+                    break;
+                case 7:
+                    yearText = getString(R.string.rabbit);
+                    break;
+                case 8:
+                    yearText = getString(R.string.dragon);
+                    break;
+                case 9:
+                    yearText = getString(R.string.snake);
+                    break;
+                case 10:
+                    yearText = getString(R.string.horse);
+                    break;
+                case 11:
+                    yearText = getString(R.string.sheep);
+                    break;
+                default:
+                    yearText = "You did not provide a valid date.";
+            }
+            mTextView.setVisibility(View.VISIBLE);
+            mTextView1.setText(yearText);
+
+        }
+
+        });
 
         return rootView;
-    }
-
-    public void onEnterYear() { //I want this to be an on-click.
-
-        int year = 0;
-        String textInEditText = mEditText.getText().toString();
-
-
-        try {
-            year = Integer.parseInt(textInEditText);
-        } catch (TypeNotPresentException e) { //Is this the type of exception I want?
-            mTextView.setVisibility(View.VISIBLE);
-            mTextView.setText(getString(R.string.invalid_date));
-        }
-
-        String yearText;
-
-        //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
-        //I could replace this with an API call. Are there Chinese zodiac APIs?
-
-        //http://www.softpedia.com/get/Programming/SDK-DDK/Horoscope-API.shtml
-
-
-        switch (year % 12) {
-            case 0:
-                yearText = getString(R.string.monkey);
-                break;
-            case 1:
-                yearText = getString(R.string.rooster);
-                break;
-            case 2:
-                yearText = getString(R.string.dog);
-                break;
-            case 3:
-                yearText = getString(R.string.pig);
-                break;
-            case 4:
-                yearText = getString(R.string.rat);
-                break;
-            case 5:
-                yearText = getString(R.string.ox);
-                break;
-            case 6:
-                yearText = getString(R.string.tiger);
-                break;
-            case 7:
-                yearText = getString(R.string.rabbit);
-                break;
-            case 8:
-                yearText = getString(R.string.dragon);
-                break;
-            case 9:
-                yearText = getString(R.string.snake);
-                break;
-            case 10:
-                yearText = getString(R.string.horse);
-                break;
-            case 11:
-                yearText = getString(R.string.sheep);
-                break;
-            default:
-                yearText = "You did not provide a valid date.";
-        }
-        mTextView.setVisibility(View.VISIBLE);
-        mTextView1.setText(yearText);
     }
 }
