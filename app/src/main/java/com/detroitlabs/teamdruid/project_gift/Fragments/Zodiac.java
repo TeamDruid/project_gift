@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.detroitlabs.teamdruid.project_gift.R;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by admin on 11/3/14.
  */
@@ -61,20 +63,26 @@ public class Zodiac extends Fragment {
         mButton = (Button) rootView.findViewById(R.id.search_button);
         mButton.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {//I want this to be an on-click.
+        public void onClick(View v) {
 
             int year = 0;
+
             String textInEditText = mEditText.getText().toString();
+            mTextView.setText(getString(R.string.your_zodiac_sign_is));
+            mTextView1.setVisibility(View.VISIBLE);
+
 
 
             try {
                 year = Integer.parseInt(textInEditText);
-            } catch (TypeNotPresentException e) { //Is this the type of exception I want?
+            } catch (NumberFormatException e) { //Is this the type of exception I want?
                 mTextView.setVisibility(View.VISIBLE);
                 mTextView.setText(getString(R.string.invalid_date));
+                mTextView1.setVisibility(View.INVISIBLE);
             }
 
-            String yearText;
+            String yearText = "";
+            int input = (year + 12*abs(year))%12;
 
             //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
             //I could replace this with an API call. Are there Chinese zodiac APIs?
@@ -82,7 +90,7 @@ public class Zodiac extends Fragment {
             //http://www.softpedia.com/get/Programming/SDK-DDK/Horoscope-API.shtml
 
 
-            switch (year % 12) {
+            switch (input) {
                 case 0:
                     yearText = getString(R.string.monkey);
                     break;
@@ -120,7 +128,7 @@ public class Zodiac extends Fragment {
                     yearText = getString(R.string.sheep);
                     break;
                 default:
-                    yearText = "You did not provide a valid date.";
+                    break;
             }
             mTextView.setVisibility(View.VISIBLE);
             mTextView1.setText(yearText);
