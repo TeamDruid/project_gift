@@ -15,12 +15,15 @@
         android:text="@string/enter_birthday"
         android:textSize="35sp"
         android:gravity="center"
+        android:layout_marginTop="200dp"
         android:textColor="#ddbb00"/>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center">
+
 
         <EditText
             android:id="@+id/year"
