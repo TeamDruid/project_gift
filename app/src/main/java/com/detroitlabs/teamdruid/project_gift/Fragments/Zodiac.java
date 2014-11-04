@@ -33,6 +33,11 @@ public class Zodiac extends Fragment {
         String yearText;
 
         //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
+        //I could replace this with an API call. Are there Chinese zodiac APIs?
+
+        //http://www.softpedia.com/get/Programming/SDK-DDK/Horoscope-API.shtml
+
+
         switch (year % 12) {
             case 0:
                 yearText = getString(R.string.monkey);
