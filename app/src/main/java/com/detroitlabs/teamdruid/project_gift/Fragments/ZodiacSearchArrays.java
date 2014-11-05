@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by elyseturner on 11/4/14.
  */
 public class ZodiacSearchArrays {
-    String[] Rat = {"hedfhwv","kwjdekwbk"};
+    String[] Rat = {"stationery", "soap", "lip balm", "macaroon", "friendship", "mug", "laptop bag", "infinity scarf", "pet tag", "antique jewelry"};
 
     String[] Ox = {"journal", "farm", "hand quilted", "embroidery", "jigsaw puzzle", "candle", "plants", "tea", "beer kit", "canned goods"};
 
