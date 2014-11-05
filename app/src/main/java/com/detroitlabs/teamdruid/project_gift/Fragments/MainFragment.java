@@ -94,6 +94,26 @@ public class MainFragment extends Fragment {
                 }
             }
         });
+
+        txtInterests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                final Interests interests = new Interests();
+
+                if (fragmentTransaction.isEmpty()) {
+
+                    // Commit the transaction
+                    fragmentTransaction.add(R.id.container, interests);
+                    Log.v(LOG_TAG, "*********put the Interests fragment on screen");
+                    fragmentTransaction.commit();
+                    Log.v(LOG_TAG, "********committing the Interests fragment");
+
+                }
+            }
+        });
+
         return rootView;
     }
 }
