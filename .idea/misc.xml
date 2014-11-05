@@ -3,9 +3,12 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+<<<<<<< HEAD
+=======
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+>>>>>>> upstream/master
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -111,5 +114,24 @@
       <Port>5050</Port>
     </configuration>
   </component>
+<<<<<<< HEAD
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Android API 19 Platform</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+=======
+>>>>>>> upstream/master
 </project>
 
