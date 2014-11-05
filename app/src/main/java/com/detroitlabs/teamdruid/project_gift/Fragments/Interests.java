@@ -35,7 +35,7 @@ public class Interests extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        //Not sure what should happen for interests here.
+        //Not sure what should happen for interests here. Are we calling the API at this point?
     }
 
 }

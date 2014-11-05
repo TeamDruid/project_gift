@@ -11,7 +11,7 @@ public class ZodiacSearchArrays {
 
     String[] Ox = {"hedfhwv","kwjdekwbk"};
 
-    String[] Tiger = {"hedfhwv","kwjdekwbk"};
+    String[] Tiger = {"picture frame", "politics", "notebook", "pen", "book", "organization", "mirror", "leather bag", "iPhone cover", "liquor"};
 
     String[] Hare = {"hedfhwv","kwjdekwbk"};
 
