@@ -35,7 +35,7 @@ public class Interests extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        view.getId(R.id.search_interests);
+        //Not sure what should happen for interests here.
     }
 
 }
