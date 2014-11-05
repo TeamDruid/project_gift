@@ -25,11 +25,11 @@ public class ZodiacSearchArrays {
 
     String[] Monkey = {"hedfhwv","kwjdekwbk"};
 
-    String[] Rooster = {"hedfhwv","kwjdekwbk"};
+    String[] Rooster = {"gemstone rings","cashmere","leather journal","gold bar necklace","watches","book shelf","workout", "mirrors", "lucky number7","organization" };
 
-    String[] Dog = {"hedfhwv","kwjdekwbk"};
+    String[] Dog = {"poodle dog","secrets","love", "high end gifts", "cashmere blanket", "dog", "snuggly","travel", "journal", "business cards"};
 
-    String[] Pig = {"hedfhwv","kwjdekwbk"};
+    String[] Pig = {"sleep mask","optimism", "mans handkerchief", "chivalry","food", "cooking", "great job","hard work","8 ball", "work out" };
 
 
 }
