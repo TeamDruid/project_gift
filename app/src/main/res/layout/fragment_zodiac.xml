@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:background="#ff0000">
+
+
+    <TextView
+        android:id="@+id/input_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/enter_birthday"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:layout_marginTop="200dp"
+        android:textColor="#ddbb00"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center">
+
+
+        <EditText
+            android:id="@+id/year"
+            android:hint="@string/year_hint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textColor="#ddbb00"
+            android:textSize="35sp"/>
+
+        <EditText
+            android:id="@+id/month"
+            android:hint="@string/month_hint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ddbb00"
+            android:textSize="35sp"/>
+
+        <EditText
+            android:id="@+id/day"
+            android:hint="@string/day_hint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ddbb00"
+            android:textSize="35sp"/>
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/search"
+        android:textSize="50sp"/>
+
+    <TextView
+        android:id="@+id/your_zodiac_sign_is"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/your_zodiac_sign_is"
+        android:textColor="#ddbb00"
+        android:textSize="35sp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/zodiac_sign"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textColor="#ddbb00"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        tools:text="lobster"/>
+
+
+</LinearLayout>

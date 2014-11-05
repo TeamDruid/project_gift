@@ -7,13 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.app.FragmentTransaction;
+import android.util.Log;
+import android.widget.Button;
 
+import com.detroitlabs.teamdruid.project_gift.Activities.MainActivity;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
  * Created by elyseturner on 11/4/14.
  */
 public class MainFragment extends Fragment {
+
+    public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     public MainFragment() {
     }
@@ -32,9 +38,11 @@ public class MainFragment extends Fragment {
         // text view label
         TextView txtGhost = (TextView) rootView.findViewById(R.id.ghost);
         TextView txtBoilerPlate = (TextView) rootView.findViewById(R.id.boiler_plate);
-        TextView txtDruid = (TextView) rootView.findViewById(R.id.druid_button);
+            //KO - Changing txtDruid to a button to connect to Dan's fragment.
+        Button txtDruid = (Button) rootView.findViewById(R.id.druid_button);
         TextView txtInterests = (TextView) rootView.findViewById(R.id.interests_button);
-        TextView txtZodiac= (TextView) rootView.findViewById(R.id.zodiac_button);
+            //KO - I changed txtZodiac to a Button so I can connect it to my fragment.
+        Button txtZodiac= (Button) rootView.findViewById(R.id.zodiac_button);
 
         // Loading Font Face
         Typeface tfMain = Typeface.createFromAsset(getActivity().getAssets(), titleFontPath);
@@ -49,6 +57,43 @@ public class MainFragment extends Fragment {
         txtInterests.setTypeface(tfInterests);
         txtZodiac.setTypeface(tfZodiac);
 
+        txtZodiac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                final Zodiac zodiac = new Zodiac();
+
+                if (fragmentTransaction.isEmpty()) {
+
+                    // Commit the transaction
+                    fragmentTransaction.add(R.id.container, zodiac);
+                    Log.v(LOG_TAG, "*********put the Zodiac fragment on screen");
+                    fragmentTransaction.commit();
+                    Log.v(LOG_TAG, "********committing the Zodiac fragment");
+
+                }
+            }
+        });
+
+        txtDruid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                final Druid druid = new Druid();
+
+                if (fragmentTransaction.isEmpty()) {
+
+                    // Commit the transaction
+                    fragmentTransaction.add(R.id.container, druid);
+                    Log.v(LOG_TAG, "*********put the Druid fragment on screen");
+                    fragmentTransaction.commit();
+                    Log.v(LOG_TAG, "********committing the Druid fragment");
+
+                }
+            }
+        });
         return rootView;
     }
 }
