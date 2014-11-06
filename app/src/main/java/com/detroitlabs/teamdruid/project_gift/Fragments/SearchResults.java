@@ -26,13 +26,14 @@ public class SearchResults extends ListFragment {
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
     List<EtsyObjects> mResultsList = new ArrayList<EtsyObjects>();
-
+    private static final String QUEUE = "queue";
 
     @Override
-    public void onViewCreate(View view, Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         ListView myListView = getListView();
         ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         myListView.setAdapter(adapter);
+        getArguments().getParcelableArrayList(QUEUE);
     }
 
     public class ResultsAdapter extends ArrayAdapter<EtsyObjects> {
@@ -42,26 +43,36 @@ public class SearchResults extends ListFragment {
             super(context, android.R.layout.simple_list_item_1, etsyObjects);
             searchResults = etsyObjects;
         }
+
+        @Override
+        public int getCount() {
+            return searchResults.size();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View rowView = LayoutInflater.from(getContext()).inflate(R.layout.search_results, parent, false);
+
+            ImageView giftImage = (ImageView)rowView.findViewById(R.id.gift_image);
+            TextView nameText = (TextView)rowView.findViewById(R.id.name_text);
+            TextView priceText = (TextView)rowView.findViewById(R.id.price_text);
+
+            EtsyObjects currentGift = searchResults.get(position);
+            nameText.setText(currentGift.getmTitle());
+            priceText.setText(currentGift.getmPrice());
+            Picasso.with(getActivity()).load(currentGift.getmThumbnail()).into(giftImage);
+
+            return rowView;
+        }
     }
 
-    @Override
-    public int getCount() {
-        return searchResults.size();
+    public static SearchResults newInstance(ArrayList searchResults) {
+        SearchResults fragment = new SearchResults();
+        Bundle results = new Bundle();
+        results.putParcelableArrayList(QUEUE, searchResults);
+        fragment.setArguments(results);
+        return fragment;
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = LayoutInflater.from(getContext()).inflate(R.layout.search_results, parent, false);
 
-        ImageView giftImage = (ImageView)rowView.findViewById(R.id.);
-        TextView nameText = (TextView)rowView.findViewById(R.id.);
-        TextView priceText = (TextView)rowView.findViewById(R.id.);
-
-        EtsyObjects currentGift = searchResults.get(position);
-        nameText.setText(currentGift.getmTitle());
-        priceText.setText(currentGift.getmPrice());
-        Picasso.with(getActivity()).load(currentGift.getmThumbnail()).into(giftImage);
-
-        return rowView;
-    }
 }
