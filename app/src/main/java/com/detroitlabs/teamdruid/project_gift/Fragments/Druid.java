@@ -1,15 +1,15 @@
 package com.detroitlabs.teamdruid.project_gift.Fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
-
-import java.util.zip.Inflater;
 
 /**
  * Created by kyleofori on 11/3/14.
@@ -17,7 +17,9 @@ import java.util.zip.Inflater;
 public class Druid extends Fragment implements View.OnClickListener {
     Button mYesButton;
     Button mNoButton;
-
+    String keyword;
+    private static final String DRUID_TAG = "druid tag";
+    private static final String NOT_DRUID_TAG = "not druid tag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,10 +37,14 @@ public class Druid extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.yes_druid:
-//                send to API call
-                break;
+            keyword = "Druid staff";
+            Intent apiIntent1 = new Intent(getActivity(), EtsyAPI.class);
+            apiIntent1.putExtra(DRUID_TAG, keyword);
+                    break;
             case R.id.no_druid:
-//                send to API call
+            keyword = "sad face";
+            Intent apiIntent2 = new Intent(getActivity(), EtsyAPI.class);
+            apiIntent2.putExtra(NOT_DRUID_TAG, keyword);
                 break;
         }
     }

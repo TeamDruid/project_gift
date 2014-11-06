@@ -1,6 +1,7 @@
 package com.detroitlabs.teamdruid.project_gift.Fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
+import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 import static java.lang.Math.abs;
@@ -21,6 +25,8 @@ public class Zodiac extends Fragment {
     private TextView mTextView1;
     private EditText mEditText;
     private Button mButton;
+    private Button sendButton;
+    private static final String ZODIAC = "zodiac";
 
     //Getter methods may come in handy later.
     public TextView getTextView() {
@@ -135,6 +141,21 @@ public class Zodiac extends Fragment {
 
         }
 
+        });
+
+        sendButton = (Button) rootView.findViewById(R.id.search_ETSY);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (yearText == null) {
+                    Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT);
+                }
+
+                Intent resultsIntent = new Intent(getActivity(), ResultsActivity.class);
+                resultsIntent.putExtra(ZODIAC, yearText);
+                startActivity(resultsIntent);
+            }
         });
 
         return rootView;

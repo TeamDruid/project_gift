@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.detroitlabs.teamdruid.project_gift.APIs.EtsyAPI;
+import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
