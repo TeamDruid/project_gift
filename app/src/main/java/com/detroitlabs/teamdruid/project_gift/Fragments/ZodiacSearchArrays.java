@@ -15,15 +15,15 @@ public class ZodiacSearchArrays {
 
     String[] Hare = {"",""};
 
-    String[] Dragon = {"hedfhwv","kwjdekwbk"};
+    String[] Dragon = {"computers","inventor","leader","roller skates","bike helmet","diary","stickers","hat","glitter pen","jewelry box"};
 
-    String[] Snake = {"hedfhwv","kwjdekwbk"};
+    String[] Snake = {"inspirational quotes","story book","stress ball","headphones","orchid","cactus","pottery","paint","dreamcatcher","video games"};
 
     String[] Horse = {"",""};
 
     String[] Sheep = {"",""};
 
-    String[] Monkey = {"hedfhwv","kwjdekwbk"};
+    String[] Monkey = {"football","musical","puzzle","phone","wilderness","outdoors","jokes","basketball","chrysanthemum","science"};
 
     String[] Rooster = {"gemstone rings","cashmere","leather journal","gold bar necklace","watches","book shelf","workout", "mirrors", "lucky number7","organization" };
 
