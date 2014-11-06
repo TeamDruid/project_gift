@@ -48,6 +48,7 @@ public class Zodiac extends Fragment {
     //-a way to search the user's birthday
     //-a way to match the birthday to a particular zodiac sign
 
+    String yearText = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -81,7 +82,6 @@ public class Zodiac extends Fragment {
                 mTextView1.setVisibility(View.INVISIBLE);
             }
 
-            String yearText = "";
             int input = (year + 12*abs(year))%12;
 
             //A very loose and bound to be inaccurate calculator of one's Chinese zodiac sign.
@@ -139,4 +139,5 @@ public class Zodiac extends Fragment {
 
         return rootView;
     }
+
 }

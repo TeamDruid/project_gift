@@ -34,18 +34,24 @@ public class Interests extends Fragment implements View.OnClickListener {
 //        EditText3 = (EditText) rootView.findViewById(R.id.interest3);
 
         searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests);
-        searchInterestsButton.setOnClickListener(this);
+        searchInterestsButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent apiIntent = new Intent(getActivity(), EtsyAPI.class);
+                apiIntent.putExtra(FIRST_INTEREST, EditText1.getText().toString());
+        //      apiIntent.putExtra(SECOND_INTEREST, EditText2.getText().toString());
+        //      apiIntent.putExtra(THIRD_INTEREST, EditText3.getText().toString());
+                startActivity(apiIntent);
+            }
+        });
 
         return rootView;
+
     }
 
     @Override
     public void onClick(View view) {
-        Intent apiIntent = new Intent(getActivity(), EtsyAPI.class);
-        apiIntent.putExtra(FIRST_INTEREST, EditText1.getText().toString());
-//        apiIntent.putExtra(SECOND_INTEREST, EditText2.getText().toString());
-//        apiIntent.putExtra(THIRD_INTEREST, EditText3.getText().toString());
-        startActivity(apiIntent);
-    }
 
+    }
 }
