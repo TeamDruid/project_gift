@@ -49,11 +49,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/search_interests"
+        android:id="@+id/search_ETSY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/search"
+        android:text="@string/search_ETSY"
         android:textSize="50sp"/>
 
 </LinearLayout>
