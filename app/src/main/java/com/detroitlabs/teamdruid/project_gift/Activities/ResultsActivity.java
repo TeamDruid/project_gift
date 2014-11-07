@@ -1,6 +1,8 @@
 package com.detroitlabs.teamdruid.project_gift.Activities;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,7 +15,7 @@ import com.detroitlabs.teamdruid.project_gift.R;
 /**
  * Created by anniedevine on 11/6/14.
  */
-public class ResultsActivity extends Activity{
+public class ResultsActivity extends Activity {
 
     //call get intent.getextras
 //    use the bundle from get extras to set the arguments of the fragment that you're starting'
@@ -24,13 +26,14 @@ public class ResultsActivity extends Activity{
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new SearchResultsFragment())
-                    .commit();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+            Bundle searchKeyword = getIntent().getExtras();
+            SearchResultsFragment fragInfo = new SearchResultsFragment();
+            fragInfo.setArguments(searchKeyword);
+            transaction.replace(R.id.container, fragInfo);
+            transaction.commit();
         }
-
-        String searchKeyword = getIntent().getExtras().toString();
-
     }
 
 
