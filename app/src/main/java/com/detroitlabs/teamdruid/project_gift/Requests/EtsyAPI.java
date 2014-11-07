@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.detroitlabs.teamdruid.project_gift.JSON.JsonData;
+import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
 
 import org.json.JSONObject;
 
@@ -13,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -22,6 +24,14 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class EtsyAPI extends AsyncTask{
 
+    public interface OnDataLoadedListener {
+
+        public void dataLoaded(ArrayList<EtsyObjects> etsyObjectses);
+
+    }
+
+
+
     private final String API_KEY = "&api_key=rf882apukk32kmsqamjwej8w";
     private final String BASE_API = "https://openapi.etsy.com/v2/listings/active?";
     private final String SORTING_HAT = "&sort_on=score&sort_order=down";
@@ -30,8 +40,10 @@ public class EtsyAPI extends AsyncTask{
     private final String INCLUDE_IMAGES = "&includes=Images";
     public static String searchKeyword = "";
 
-    public EtsyAPI(String searchKeyword) {
+
+    public EtsyAPI(String searchKeyword , OnDataLoadedListener onDataLoadedListener) {
         this.searchKeyword = searchKeyword;
+        this.mOnDataLoadedListener= onDataLoadedListener;
     }
 
     InputStream mInputStream = null;
@@ -39,6 +51,7 @@ public class EtsyAPI extends AsyncTask{
     JSONObject mJsonObject;
     public String mSearchResult;
     public String mFullURL;
+    private OnDataLoadedListener mOnDataLoadedListener;
 
     @Override
     protected Object doInBackground(Object[] objects) {
@@ -110,5 +123,7 @@ public class EtsyAPI extends AsyncTask{
 
         //calling the set method
         mJsonData.setSearchResults(mSearchResult);
+        ArrayList<EtsyObjects> jelly=  mJsonData.parseJson();
+        mOnDataLoadedListener.dataLoaded(jelly);
     }
 }

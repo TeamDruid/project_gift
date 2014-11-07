@@ -1,12 +1,16 @@
 package com.detroitlabs.teamdruid.project_gift.JSON;
 
+import android.app.FragmentTransaction;
 import android.util.Log;
 
+import com.detroitlabs.teamdruid.project_gift.Fragments.SearchResultsFragment;
 import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * Created by elyseturner on 11/5/14.
@@ -25,6 +29,7 @@ public class JsonData {
   public String mPrice;
   public String mImage;
   public String mThumbnail;
+    public ArrayList<EtsyObjects> mEtsyObjectsArrayList = new ArrayList<EtsyObjects>();
 
     EtsyObjects mEtsyObject = new EtsyObjects();
 
@@ -34,7 +39,7 @@ public class JsonData {
 
   }
 
-    public void parseJson(){
+    public ArrayList<EtsyObjects> parseJson(){
         try{
            //take these msearchresults, convert them to a JSON Object.
             mJsonObject = new JSONObject(mSearchResults);
@@ -73,12 +78,15 @@ public class JsonData {
 
                 mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
                 mEtsyObject.setmFullSize(mImage);
+                mEtsyObjectsArrayList.add(mEtsyObject);
             }
         }
 
         catch (JSONException e){
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }
+
+        return mEtsyObjectsArrayList;
     }
 
 }
