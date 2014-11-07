@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
 import com.detroitlabs.teamdruid.project_gift.R;
+import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class SearchResultsFragment extends ListFragment {
     ArrayAdapter mArrayAdapter;
     List<EtsyObjects> mResultsList = new ArrayList<EtsyObjects>();
     private static final String QUEUE = "queue";
+    private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class SearchResultsFragment extends ListFragment {
         ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         myListView.setAdapter(adapter);
         getArguments().getParcelableArrayList(QUEUE);
+        EtsyAPI etsyAPI = new EtsyAPI(getArguments().getString(SEARCH_KEYWORD_TAG));
+
+        etsyAPI.execute();
     }
 
     public class ResultsAdapter extends ArrayAdapter<EtsyObjects> {
