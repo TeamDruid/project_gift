@@ -41,12 +41,14 @@ public class Druid extends Fragment implements View.OnClickListener {
                 keyword = "Druid staff";
                 Intent apiIntent1 = new Intent(getActivity(), ResultsActivity.class);
                 apiIntent1.putExtra(DRUID_TAG, keyword);
+                startActivity(apiIntent1);
                     break;
             case R.id.no_druid:
                 keyword = "sad face";
                 Intent apiIntent2 = new Intent(getActivity(), ResultsActivity.class);
                 apiIntent2.putExtra(NOT_DRUID_TAG, keyword);
-                    break;
+                startActivity(apiIntent2);
+                break;
         }
     }
 }

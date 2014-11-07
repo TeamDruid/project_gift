@@ -3,7 +3,6 @@ package com.detroitlabs.teamdruid.project_gift.Fragments;
 import android.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import java.util.List;
 /**
  * Created by anniedevine on 11/6/14.
  */
-public class SearchResults extends ListFragment {
+public class SearchResultsFragment extends ListFragment {
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
     List<EtsyObjects> mResultsList = new ArrayList<EtsyObjects>();
@@ -66,8 +65,9 @@ public class SearchResults extends ListFragment {
         }
     }
 
-    public static SearchResults newInstance(ArrayList searchResults) {
-        SearchResults fragment = new SearchResults();
+    //This is a way we can pass the search results from the API.
+    public static SearchResultsFragment newInstance(ArrayList searchResults) {
+        SearchResultsFragment fragment = new SearchResultsFragment();
         Bundle results = new Bundle();
         results.putParcelableArrayList(QUEUE, searchResults);
         fragment.setArguments(results);
