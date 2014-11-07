@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
+import com.detroitlabs.teamdruid.project_gift.Models.ZodiacSearchArrays;
 import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
@@ -27,6 +28,8 @@ public class Zodiac extends Fragment {
     private Button mButton;
     private Button sendButton;
     private static final String ZODIAC = "zodiac";
+    public ZodiacSearchArrays zodiakArrays = new ZodiacSearchArrays();
+    private String searchKeyword;
 
     //Getter methods may come in handy later.
     public TextView getTextView() {
@@ -99,39 +102,51 @@ public class Zodiac extends Fragment {
             switch (input) {
                 case 0:
                     yearText = getString(R.string.monkey);
+                    searchKeyword = zodiakArrays.getMonkey();
                     break;
                 case 1:
                     yearText = getString(R.string.rooster);
+                    searchKeyword = zodiakArrays.getRooster();
                     break;
                 case 2:
                     yearText = getString(R.string.dog);
+                    searchKeyword = zodiakArrays.getDog();
                     break;
                 case 3:
                     yearText = getString(R.string.pig);
+                    searchKeyword = zodiakArrays.getPig();
                     break;
                 case 4:
                     yearText = getString(R.string.rat);
+                    searchKeyword = zodiakArrays.getRat();
                     break;
                 case 5:
                     yearText = getString(R.string.ox);
+                    searchKeyword = zodiakArrays.getOx();
                     break;
                 case 6:
                     yearText = getString(R.string.tiger);
+                    searchKeyword = zodiakArrays.getTiger();
                     break;
                 case 7:
                     yearText = getString(R.string.rabbit);
+                    searchKeyword = zodiakArrays.getRabbit();
                     break;
                 case 8:
                     yearText = getString(R.string.dragon);
+                    searchKeyword = zodiakArrays.getDragon();
                     break;
                 case 9:
                     yearText = getString(R.string.snake);
+                    searchKeyword = zodiakArrays.getSnake();
                     break;
                 case 10:
                     yearText = getString(R.string.horse);
+                    searchKeyword = zodiakArrays.getHorse();
                     break;
                 case 11:
                     yearText = getString(R.string.sheep);
+                    searchKeyword = zodiakArrays.getSheep();
                     break;
                 default:
                     break;
@@ -148,12 +163,12 @@ public class Zodiac extends Fragment {
 
             @Override
             public void onClick(View view) {
-                if (yearText == null) {
+                if (searchKeyword == null) {
                     Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT);
                 }
 
                 Intent resultsIntent = new Intent(getActivity(), ResultsActivity.class);
-                resultsIntent.putExtra(ZODIAC, yearText);
+                resultsIntent.putExtra(ZODIAC, searchKeyword);
                 startActivity(resultsIntent);
             }
         });
