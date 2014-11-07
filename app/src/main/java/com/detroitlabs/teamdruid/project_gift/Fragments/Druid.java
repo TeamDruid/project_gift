@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
-import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
@@ -19,8 +18,7 @@ public class Druid extends Fragment implements View.OnClickListener {
     Button mYesButton;
     Button mNoButton;
     String keyword;
-    private static final String DRUID_TAG = "druid tag";
-    private static final String NOT_DRUID_TAG = "not druid tag";
+    private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,13 +38,13 @@ public class Druid extends Fragment implements View.OnClickListener {
             case R.id.yes_druid:
                 keyword = "Druid staff";
                 Intent apiIntent1 = new Intent(getActivity(), ResultsActivity.class);
-                apiIntent1.putExtra(DRUID_TAG, keyword);
+                apiIntent1.putExtra(SEARCH_KEYWORD_TAG, keyword);
                 startActivity(apiIntent1);
                     break;
             case R.id.no_druid:
                 keyword = "sad face";
                 Intent apiIntent2 = new Intent(getActivity(), ResultsActivity.class);
-                apiIntent2.putExtra(NOT_DRUID_TAG, keyword);
+                apiIntent2.putExtra(SEARCH_KEYWORD_TAG, keyword);
                 startActivity(apiIntent2);
                 break;
         }
