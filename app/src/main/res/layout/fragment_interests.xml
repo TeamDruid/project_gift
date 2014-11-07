@@ -22,6 +22,7 @@
         <!--android:layout_gravity="center">-->
 
     <EditText
+        android:id="@+id/interest1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="@string/interest_hint"
