@@ -35,9 +35,11 @@ public class Druid extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.yes_druid:
-//                send to API call
+                String druidSearch = "druid staff";
+//              send to API call
                 break;
             case R.id.no_druid:
+
 //                send to API call
                 break;
         }
