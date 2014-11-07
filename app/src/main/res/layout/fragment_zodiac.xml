@@ -8,7 +8,6 @@
                 android:background="#ff0000"
     android:weightSum="6">
 
-
     <TextView
         android:id="@+id/input_birthday"
         android:layout_width="match_parent"
@@ -96,5 +95,12 @@
         android:textSize="50sp"
         android:layout_weight="1"/>
 
+    <Button
+        android:id="@+id/search_ETSY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/search_ETSY"
+        android:textSize="50sp"/>
 
 </LinearLayout>

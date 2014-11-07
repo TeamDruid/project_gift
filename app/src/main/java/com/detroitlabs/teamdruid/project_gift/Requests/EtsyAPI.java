@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.APIs;
+package com.detroitlabs.teamdruid.project_gift.Requests;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -30,7 +30,9 @@ public class EtsyAPI extends AsyncTask{
     private final String INCLUDE_IMAGES = "&includes=Images";
     public String searchKeyword = "";
 
-
+    public EtsyAPI(String searchKeyword) {
+        this.searchKeyword = searchKeyword;
+    }
 
     InputStream mInputStream = null;
     HttpsURLConnection mURLConnector = null;
@@ -40,6 +42,7 @@ public class EtsyAPI extends AsyncTask{
 
     @Override
     protected Object doInBackground(Object[] objects) {
+
         try {
             //this string builder is used to assemble the JSON data
             StringBuilder mStringBuilder = new StringBuilder();
