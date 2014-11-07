@@ -26,7 +26,8 @@ public class Zodiac extends Fragment {
     private EditText mEditText;
     private Button mButton;
     private Button sendButton;
-    private static final String ZODIAC = "zodiac";
+
+    private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
     public ZodiacSearchArrays zodiacArrays = new ZodiacSearchArrays();
     private String searchKeyword;
 
@@ -168,7 +169,7 @@ public class Zodiac extends Fragment {
                 }
 
                 Intent resultsIntent = new Intent(getActivity(), ResultsActivity.class);
-                resultsIntent.putExtra(ZODIAC, searchKeyword);
+                resultsIntent.putExtra(SEARCH_KEYWORD_TAG, searchKeyword);
                 startActivity(resultsIntent);
             }
         });
