@@ -28,7 +28,7 @@ public class EtsyAPI extends AsyncTask{
     private final String RESULT_LIMIT = "limit=25";
     private final String SEARCH_TERM = "&keywords=";
     private final String INCLUDE_IMAGES = "&includes=Images";
-    public String searchKeyword = "";
+    public static String searchKeyword = "";
 
     public EtsyAPI(String searchKeyword) {
         this.searchKeyword = searchKeyword;
