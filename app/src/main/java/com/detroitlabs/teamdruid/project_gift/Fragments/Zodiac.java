@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
 import com.detroitlabs.teamdruid.project_gift.Models.ZodiacSearchArrays;
-import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 import static java.lang.Math.abs;
@@ -28,8 +27,9 @@ public class Zodiac extends Fragment {
     private Button mButton;
     private Button sendButton;
     private static final String ZODIAC = "zodiac";
-    public ZodiacSearchArrays zodiakArrays = new ZodiacSearchArrays();
+    public ZodiacSearchArrays zodiacArrays = new ZodiacSearchArrays();
     private String searchKeyword;
+
 
     //Getter methods may come in handy later.
     public TextView getTextView() {
@@ -102,51 +102,51 @@ public class Zodiac extends Fragment {
             switch (input) {
                 case 0:
                     yearText = getString(R.string.monkey);
-                    searchKeyword = zodiakArrays.getMonkey();
+                    searchKeyword = zodiacArrays.getMonkey();
                     break;
                 case 1:
                     yearText = getString(R.string.rooster);
-                    searchKeyword = zodiakArrays.getRooster();
+                    searchKeyword = zodiacArrays.getRooster();
                     break;
                 case 2:
                     yearText = getString(R.string.dog);
-                    searchKeyword = zodiakArrays.getDog();
+                    searchKeyword = zodiacArrays.getDog();
                     break;
                 case 3:
                     yearText = getString(R.string.pig);
-                    searchKeyword = zodiakArrays.getPig();
+                    searchKeyword = zodiacArrays.getPig();
                     break;
                 case 4:
                     yearText = getString(R.string.rat);
-                    searchKeyword = zodiakArrays.getRat();
+                    searchKeyword = zodiacArrays.getRat();
                     break;
                 case 5:
                     yearText = getString(R.string.ox);
-                    searchKeyword = zodiakArrays.getOx();
+                    searchKeyword = zodiacArrays.getOx();
                     break;
                 case 6:
                     yearText = getString(R.string.tiger);
-                    searchKeyword = zodiakArrays.getTiger();
+                    searchKeyword = zodiacArrays.getTiger();
                     break;
                 case 7:
                     yearText = getString(R.string.rabbit);
-                    searchKeyword = zodiakArrays.getRabbit();
+                    searchKeyword = zodiacArrays.getRabbit();
                     break;
                 case 8:
                     yearText = getString(R.string.dragon);
-                    searchKeyword = zodiakArrays.getDragon();
+                    searchKeyword = zodiacArrays.getDragon();
                     break;
                 case 9:
                     yearText = getString(R.string.snake);
-                    searchKeyword = zodiakArrays.getSnake();
+                    searchKeyword = zodiacArrays.getSnake();
                     break;
                 case 10:
                     yearText = getString(R.string.horse);
-                    searchKeyword = zodiakArrays.getHorse();
+                    searchKeyword = zodiacArrays.getHorse();
                     break;
                 case 11:
                     yearText = getString(R.string.sheep);
-                    searchKeyword = zodiakArrays.getSheep();
+                    searchKeyword = zodiacArrays.getSheep();
                     break;
                 default:
                     break;
