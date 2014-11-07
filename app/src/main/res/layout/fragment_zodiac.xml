@@ -5,25 +5,26 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-                android:background="#ff0000"
-    android:weightSum="6">
+              android:background="@color/tan"
+              android:weightSum="6">
 
     <TextView
         android:id="@+id/input_birthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enter_birthday"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:gravity="center"
         android:layout_marginTop="25dp"
-        android:textColor="#ddbb00"
+        android:textColor="@color/red"
         android:layout_weight="1"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1">
 
 
@@ -63,24 +64,27 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/search"
         android:textSize="25dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:textColor="@color/tan"
+        android:background="@drawable/round_edge_button"/>
 
     <TextView
         android:id="@+id/your_zodiac_sign_is"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:text="@string/your_zodiac_sign_is"
-        android:textColor="#ddbb00"
+        android:textColor="@color/red"
         android:textSize="25dp"
         android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/zodiac_sign"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:textColor="#ddbb00"
-        android:textSize="60sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:textSize="40sp"
         android:gravity="center"
         android:textAllCaps="true"
         tools:text="lobster"
@@ -91,16 +95,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/search"
-        android:textSize="50sp"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/search_ETSY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:text="@string/search_ETSY"
-        android:textSize="50sp"/>
+        android:textSize="30sp"
+        android:textColor="@color/tan"
+        android:background="@drawable/round_edge_button"/>
 
 </LinearLayout>
