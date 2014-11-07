@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
 import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
@@ -33,16 +35,21 @@ public class Interests extends Fragment implements View.OnClickListener {
 //        EditText2 = (EditText) rootView.findViewById(R.id.interest2);
 //        EditText3 = (EditText) rootView.findViewById(R.id.interest3);
 
-        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests);
+        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests_ETSY);
         searchInterestsButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent apiIntent = new Intent(getActivity(), EtsyAPI.class);
-                apiIntent.putExtra(FIRST_INTEREST, EditText1.getText().toString());
-        //      apiIntent.putExtra(SECOND_INTEREST, EditText2.getText().toString());
-        //      apiIntent.putExtra(THIRD_INTEREST, EditText3.getText().toString());
-                startActivity(apiIntent);
+                String editTextString = EditText1.getText().toString();
+                if (editTextString.length() < 1) {
+                    Toast.makeText(getActivity(), "Please enter an interest first", Toast.LENGTH_SHORT);
+                } else {
+                    Intent apiIntent = new Intent(getActivity(), ResultsActivity.class);
+                    apiIntent.putExtra(FIRST_INTEREST, EditText1.getText().toString());
+                    //      apiIntent.putExtra(SECOND_INTEREST, EditText2.getText().toString());
+                    //      apiIntent.putExtra(THIRD_INTEREST, EditText3.getText().toString());
+                    startActivity(apiIntent);
+                }
             }
         });
 

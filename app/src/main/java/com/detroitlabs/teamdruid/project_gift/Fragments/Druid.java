@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
 import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
 import com.detroitlabs.teamdruid.project_gift.R;
 
@@ -38,14 +39,14 @@ public class Druid extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.yes_druid:
                 keyword = "Druid staff";
-                Intent apiIntent1 = new Intent(getActivity(), EtsyAPI.class);
+                Intent apiIntent1 = new Intent(getActivity(), ResultsActivity.class);
                 apiIntent1.putExtra(DRUID_TAG, keyword);
                     break;
             case R.id.no_druid:
                 keyword = "sad face";
-                Intent apiIntent2 = new Intent(getActivity(), EtsyAPI.class);
+                Intent apiIntent2 = new Intent(getActivity(), ResultsActivity.class);
                 apiIntent2.putExtra(NOT_DRUID_TAG, keyword);
-                break;
+                    break;
         }
     }
 }

@@ -25,8 +25,9 @@
     <string name="your_zodiac_sign_is">Your zodiac sign is…</string>
     <string name="search">What\'s my zodiac sign?</string>
     <string name="invalid_date">You did not provide a valid date.</string>
-    <string name="enter_interests">What are the gift recipient\'s top three interests? Please enter below:</string>
+    <string name="enter_interests">What is the gift recipient\'s top interest?</string>
     <string name="search_ETSY">Search Etsy</string>
+    <string name="interest_hint">Enter interest here</string>
 
 
 
