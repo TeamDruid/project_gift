@@ -2,11 +2,8 @@ package com.detroitlabs.teamdruid.project_gift.requests;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
 import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
 import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
-
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,22 +12,15 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
 import javax.net.ssl.HttpsURLConnection;
-
 /**
  * Created by admin on 11/3/14.
  */
-
-public class EtsyAPI extends AsyncTask{
+public class EtsyAPI extends AsyncTask<Object, Void, String>{
 
     public interface OnDataLoadedListener {
-
         public void dataLoaded(ArrayList<EtsyObjects> etsyObjectses);
-
     }
-
-
 
     private final String API_KEY = "&api_key=rf882apukk32kmsqamjwej8w";
     private final String BASE_API = "https://openapi.etsy.com/v2/listings/active?";
@@ -38,97 +28,56 @@ public class EtsyAPI extends AsyncTask{
     private final String RESULT_LIMIT = "limit=25";
     private final String SEARCH_TERM = "&keywords=";
     private final String INCLUDE_IMAGES = "&includes=Images";
-    public static String searchKeyword = "";
-
+    private String searchKeyword = "";
+    private OnDataLoadedListener onDataLoadedListener;
+    public String searchResult;
+    public String fullURL;
 
     public EtsyAPI(String searchKeyword , OnDataLoadedListener onDataLoadedListener) {
         this.searchKeyword = searchKeyword;
-        this.mOnDataLoadedListener= onDataLoadedListener;
+        this.onDataLoadedListener = onDataLoadedListener;
     }
 
-    InputStream mInputStream = null;
-    HttpsURLConnection mURLConnector = null;
-    JSONObject mJsonObject;
-    public String mSearchResult;
-    public String mFullURL;
-    private OnDataLoadedListener mOnDataLoadedListener;
-
     @Override
-    protected Object doInBackground(Object[] objects) {
-
+    protected String doInBackground(Object[] objects) {
+        InputStream inputStream;
+        HttpsURLConnection urlConnection;
         try {
-            //this string builder is used to assemble the JSON data
             StringBuilder mStringBuilder = new StringBuilder();
-
-            //building our complete URL :)
-            mFullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + SEARCH_TERM + searchKeyword + SORTING_HAT + API_KEY;
-
-            URL mEtsyUrl = new URL(mFullURL);
-
-            //this opens an internet connection with the URL built above
-            mURLConnector = (HttpsURLConnection) mEtsyUrl.openConnection();
-
-            //this tells the API what we are planning on doing... GET
-            mURLConnector.setRequestMethod("GET");
-
-
-            //the input stream is going to handle the info coming in from the URL. Helps open a line for it to follow in
-            mInputStream = mURLConnector.getInputStream();
-
-            //birthing new buffered reader, telling it to be an input stream reader and to read mInputStream
-            BufferedReader mBufferReader = new BufferedReader(new InputStreamReader(mInputStream));
-
+            fullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + SEARCH_TERM + searchKeyword + SORTING_HAT + API_KEY;
+            URL mEtsyUrl = new URL(fullURL);
+            urlConnection = (HttpsURLConnection) mEtsyUrl.openConnection();
+            urlConnection.setRequestMethod("GET");
+            inputStream = urlConnection.getInputStream();
+            BufferedReader mBufferReader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
-
-
-            //this is saying that as long as there are more lines coming in from the JSON, the string builder will add the next line
             while ((line = mBufferReader.readLine()) != null) {
                 mStringBuilder.append(line);
             }
-
-            //this is basically saying that all of the strings that were appended are now set to msearchresult
-            mSearchResult = mStringBuilder.toString();
-
-            //closing input stream bc if you leave open it will keep draining resources
-            mInputStream.close();
-
-            //closing url connector bc if you leave open it will keep draining resources
-            mURLConnector.disconnect();
+            searchResult = mStringBuilder.toString();
+            inputStream.close();
+            urlConnection.disconnect();
         }
-
-
-        //this is where you tell android studio to put in a log message for potential errors that may be happening
         catch (MalformedURLException e) {
             Log.e("TAG URL", e.getLocalizedMessage());
-
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             Log.e("TAG URL CONNECTOR", e.getLocalizedMessage());
         }
-
-
-        return mSearchResult;
-
+        return searchResult;
     }
 
-
-   //takes the m search result from above (you can rename in the onpost execute method) and does a thing
     @Override
-    protected void onPostExecute(Object SearchResult) {
-
+    protected void onPostExecute(String SearchResult) {
         super.onPostExecute(SearchResult);
-        if (mSearchResult == null) {
+        if (searchResult == null) {
             Log.v("NULL TAG", "null search results in Etsy post ex");
-        } else {
-
-            //creating isnatnce of JSON data class
-            JsonData mJsonData = new JsonData();
-
-            //calling the set method
-            mJsonData.setSearchResults(mSearchResult);
-            ArrayList<EtsyObjects> jelly = mJsonData.parseJson();
-            mOnDataLoadedListener.dataLoaded(jelly);
-
-
+        }
+        else {
+            JsonData jsonData = new JsonData();
+            jsonData.setSearchResults(searchResult);
+            ArrayList<EtsyObjects> jelly = jsonData.parseJson();
+            onDataLoadedListener.dataLoaded(jelly);
         }
     }
 }
