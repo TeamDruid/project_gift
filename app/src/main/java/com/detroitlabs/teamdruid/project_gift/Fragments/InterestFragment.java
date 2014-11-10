@@ -16,7 +16,7 @@ import com.detroitlabs.teamdruid.project_gift.R;
 /**
  * Created by kyleofori on 11/3/14.
  */
-public class Interests extends Fragment implements View.OnClickListener {
+public class InterestFragment extends Fragment implements View.OnClickListener {
 
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
     private EditText interestInput;
@@ -27,7 +27,7 @@ public class Interests extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_interests, container, false);
 
-        interestInput = (EditText) rootView.findViewById(R.id.interest1);
+        interestInput = (EditText) rootView.findViewById(R.id.interest);
 
         searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests_ETSY);
         searchInterestsButton.setOnClickListener(new View.OnClickListener() {
