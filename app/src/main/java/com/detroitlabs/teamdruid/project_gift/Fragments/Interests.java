@@ -18,10 +18,9 @@ import com.detroitlabs.teamdruid.project_gift.R;
  */
 public class Interests extends Fragment implements View.OnClickListener {
 
-    private EditText interestInput;
-    Button searchInterestsButton;
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
-
+    private EditText interestInput;
+    private Button searchInterestsButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
