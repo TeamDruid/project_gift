@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
+import com.detroitlabs.teamdruid.project_gift.activities.ResultsActivity;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**

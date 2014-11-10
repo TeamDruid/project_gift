@@ -1,14 +1,11 @@
-package com.detroitlabs.teamdruid.project_gift.Activities;
+package com.detroitlabs.teamdruid.project_gift.activities;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.detroitlabs.teamdruid.project_gift.Fragments.MainFragment;
 import com.detroitlabs.teamdruid.project_gift.Fragments.SearchResultsFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
 

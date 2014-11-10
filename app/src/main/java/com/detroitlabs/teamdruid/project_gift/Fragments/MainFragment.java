@@ -11,7 +11,7 @@ import android.app.FragmentTransaction;
 import android.util.Log;
 import android.widget.Button;
 
-import com.detroitlabs.teamdruid.project_gift.Activities.MainActivity;
+import com.detroitlabs.teamdruid.project_gift.activities.MainActivity;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
@@ -106,9 +106,9 @@ public class MainFragment extends Fragment {
 
                     // Commit the transaction
                     fragmentTransaction.add(R.id.container, interests);
-                    Log.v(LOG_TAG, "*********put the Interests fragment on screen");
+                    Log.v(LOG_TAG, "put the Interests fragment on screen");
                     fragmentTransaction.commit();
-                    Log.v(LOG_TAG, "********committing the Interests fragment");
+                    Log.v(LOG_TAG, "committing the Interests fragment");
 
                 }
             }
