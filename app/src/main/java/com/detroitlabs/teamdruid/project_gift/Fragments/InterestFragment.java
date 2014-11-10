@@ -29,7 +29,7 @@ public class InterestFragment extends Fragment implements View.OnClickListener {
 
         interestInput = (EditText) rootView.findViewById(R.id.interest);
 
-        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests_ETSY);
+        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interest_ETSY);
         searchInterestsButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
