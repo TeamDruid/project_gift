@@ -25,7 +25,7 @@ public class InterestFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_interests, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_interest, container, false);
 
         interestInput = (EditText) rootView.findViewById(R.id.interest);
 
