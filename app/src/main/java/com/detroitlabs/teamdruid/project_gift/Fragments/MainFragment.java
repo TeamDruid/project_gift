@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.Fragment;
 import android.graphics.Typeface;

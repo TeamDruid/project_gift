@@ -1,9 +1,7 @@
-package com.detroitlabs.teamdruid.project_gift.Models;
+package com.detroitlabs.teamdruid.project_gift.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.squareup.picasso.Picasso;
 
 /**
  * Created by elyseturner on 11/5/14.

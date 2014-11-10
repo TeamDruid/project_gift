@@ -1,12 +1,10 @@
-package com.detroitlabs.teamdruid.project_gift.Requests;
+package com.detroitlabs.teamdruid.project_gift.requests;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
-import com.detroitlabs.teamdruid.project_gift.JSON.JsonData;
-import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
+import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
+import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
 
 import org.json.JSONObject;
 
