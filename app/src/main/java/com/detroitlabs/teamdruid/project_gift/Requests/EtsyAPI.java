@@ -123,7 +123,8 @@ public class EtsyAPI extends AsyncTask{
 
         //calling the set method
         mJsonData.setSearchResults(mSearchResult);
-        ArrayList<EtsyObjects> jelly=  mJsonData.parseJson();
+        ArrayList<EtsyObjects> jelly =  mJsonData.parseJson();
         mOnDataLoadedListener.dataLoaded(jelly);
+
     }
 }
