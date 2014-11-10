@@ -33,10 +33,17 @@ public class SearchResultsFragment extends ListFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         ListView myListView = getListView();
-        ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
+        final ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         myListView.setAdapter(adapter);
         getArguments().getParcelableArrayList(QUEUE);
-        EtsyAPI etsyAPI = new EtsyAPI(getArguments().getString(SEARCH_KEYWORD_TAG));
+        EtsyAPI etsyAPI = new EtsyAPI(getArguments().getString(SEARCH_KEYWORD_TAG), new EtsyAPI.OnDataLoadedListener() {
+            @Override
+            public void dataLoaded(ArrayList<EtsyObjects> etsyObjectses) {
+                adapter.clear();
+                adapter.addAll(etsyObjectses);
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         etsyAPI.execute();
     }
