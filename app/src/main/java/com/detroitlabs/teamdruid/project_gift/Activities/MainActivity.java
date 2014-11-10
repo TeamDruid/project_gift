@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Activities;
+package com.detroitlabs.teamdruid.project_gift.activities;
 
 import android.app.Activity;
 import android.os.Bundle;

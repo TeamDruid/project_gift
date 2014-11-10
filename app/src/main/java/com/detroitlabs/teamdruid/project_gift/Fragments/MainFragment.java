@@ -11,7 +11,7 @@ import android.app.FragmentTransaction;
 import android.util.Log;
 import android.widget.Button;
 
-import com.detroitlabs.teamdruid.project_gift.Activities.MainActivity;
+import com.detroitlabs.teamdruid.project_gift.activities.MainActivity;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
