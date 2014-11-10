@@ -18,7 +18,7 @@ import com.detroitlabs.teamdruid.project_gift.R;
  */
 public class Interests extends Fragment implements View.OnClickListener {
 
-    private EditText EditText1, EditText2, EditText3;
+    private EditText EditText1,
     Button searchInterestsButton;
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
 
