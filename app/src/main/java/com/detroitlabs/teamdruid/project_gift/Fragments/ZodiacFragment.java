@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.detroitlabs.teamdruid.project_gift.activities.ResultsActivity;
-import com.detroitlabs.teamdruid.project_gift.Models.ZodiacSearchArrays;
+import com.detroitlabs.teamdruid.project_gift.models.ZodiacSearchArrays;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 import static java.lang.Math.abs;
@@ -20,7 +20,7 @@ import static java.lang.Math.abs;
 /**
  * Created by admin on 11/3/14.
  */
-public class Zodiac extends Fragment {
+public class ZodiacFragment extends Fragment {
     private TextView mTextView;
     private TextView mTextView1;
     private EditText mEditText;
@@ -165,7 +165,7 @@ public class Zodiac extends Fragment {
             @Override
             public void onClick(View view) {
                 if (searchKeyword == null) {
-                    Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT).show();
                 }
 
                 Intent resultsIntent = new Intent(getActivity(), ResultsActivity.class);

@@ -1,10 +1,9 @@
-package com.detroitlabs.teamdruid.project_gift.Requests;
+package com.detroitlabs.teamdruid.project_gift.requests;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
-import com.detroitlabs.teamdruid.project_gift.JSON.JsonData;
-import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
+import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
+import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
 
 import org.json.JSONObject;
 
@@ -26,7 +25,7 @@ public class EtsyAPI extends AsyncTask{
 
     public interface OnDataLoadedListener {
 
-        public void dataLoaded(ArrayList<EtsyObjects> etsyObjectses);
+        public void dataLoaded(ArrayList<EtsyObjectsModel> etsyObjectsesModels);
 
     }
 
@@ -123,7 +122,7 @@ public class EtsyAPI extends AsyncTask{
 
         //calling the set method
         mJsonData.setSearchResults(mSearchResult);
-        ArrayList<EtsyObjects> jelly =  mJsonData.parseJson();
+        ArrayList<EtsyObjectsModel> jelly =  mJsonData.parseJson();
         mOnDataLoadedListener.dataLoaded(jelly);
 
     }
