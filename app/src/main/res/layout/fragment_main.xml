@@ -44,7 +44,7 @@
         <Button
             android:id="@+id/druid_button"
             android:layout_width="30dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:textColor="@color/tan"
             android:text="Druid?"
             android:layout_weight="1"
@@ -56,7 +56,7 @@
         <Button
             android:id="@+id/interests_button"
             android:layout_width="30dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:textColor="@color/tan"
             android:text="Interests"
             android:layout_weight="1"
@@ -68,7 +68,7 @@
         <Button
             android:id="@+id/zodiac_button"
             android:layout_width="30dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:textColor="@color/tan"
             android:text="Zodiac"
             android:layout_weight="1"
