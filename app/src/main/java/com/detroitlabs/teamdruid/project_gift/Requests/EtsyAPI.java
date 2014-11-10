@@ -1,8 +1,10 @@
 package com.detroitlabs.teamdruid.project_gift.Requests;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.detroitlabs.teamdruid.project_gift.Activities.ResultsActivity;
 import com.detroitlabs.teamdruid.project_gift.JSON.JsonData;
 import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
 
@@ -116,15 +118,19 @@ public class EtsyAPI extends AsyncTask{
     protected void onPostExecute(Object SearchResult) {
 
         super.onPostExecute(SearchResult);
+        if (mSearchResult == null) {
+            Log.v("NULL TAG", "null search results in Etsy post ex");
+        } else {
+
+            //creating isnatnce of JSON data class
+            JsonData mJsonData = new JsonData();
+
+            //calling the set method
+            mJsonData.setSearchResults(mSearchResult);
+            ArrayList<EtsyObjects> jelly = mJsonData.parseJson();
+            mOnDataLoadedListener.dataLoaded(jelly);
 
 
-        //creating isnatnce of JSON data class
-        JsonData mJsonData = new JsonData();
-
-        //calling the set method
-        mJsonData.setSearchResults(mSearchResult);
-        ArrayList<EtsyObjects> jelly =  mJsonData.parseJson();
-        mOnDataLoadedListener.dataLoaded(jelly);
-
+        }
     }
 }
