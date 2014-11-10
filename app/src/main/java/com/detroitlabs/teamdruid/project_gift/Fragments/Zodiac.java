@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.detroitlabs.teamdruid.project_gift.activities.ResultsActivity;
-import com.detroitlabs.teamdruid.project_gift.Models.ZodiacSearchArrays;
+import com.detroitlabs.teamdruid.project_gift.models.ZodiacSearchArrays;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 import static java.lang.Math.abs;

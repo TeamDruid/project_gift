@@ -1,9 +1,8 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
+import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
 import com.detroitlabs.teamdruid.project_gift.R;
-import com.detroitlabs.teamdruid.project_gift.Requests.EtsyAPI;
+import com.detroitlabs.teamdruid.project_gift.requests.EtsyAPI;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.detroitlabs.teamdruid.project_gift.Fragments.SearchResultsFragment;
+import com.detroitlabs.teamdruid.project_gift.fragments.SearchResultsFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 /**
