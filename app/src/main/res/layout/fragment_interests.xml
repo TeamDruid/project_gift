@@ -16,12 +16,6 @@
         android:layout_marginTop="100dp"
         android:textColor="@color/red"/>
 
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="350dp"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:layout_gravity="center">-->
-
     <EditText
         android:id="@+id/interest1"
         android:layout_width="match_parent"
@@ -29,31 +23,6 @@
         android:hint="@string/interest_hint"
         android:gravity="center"
         android:layout_marginTop="30dp"/>
-        <!--<EditText-->
-            <!--android:id="@+id/interest1"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="2"-->
-            <!--android:textColor="#ddbb00"-->
-            <!--android:textSize="35sp"/>-->
-
-        <!--<EditText-->
-            <!--android:id="@+id/interest2"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textColor="#ddbb00"-->
-            <!--android:textSize="35sp"/>-->
-
-        <!--<EditText-->
-            <!--android:id="@+id/interest3"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:textColor="#ddbb00"-->
-            <!--android:textSize="35sp"/>-->
-
-    <!--</LinearLayout>-->
 
     <Button
         android:id="@+id/search_interests_ETSY"
