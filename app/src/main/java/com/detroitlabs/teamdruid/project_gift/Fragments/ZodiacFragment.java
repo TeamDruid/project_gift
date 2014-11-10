@@ -57,19 +57,7 @@ public class ZodiacFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_button:
-                int year = 0;
-
-                String textInEditText = edtChangeBirthYear.getText().toString();
-                txtYourZodiacSignIs.setText(getString(R.string.your_zodiac_sign_is));
-                txtZodiacSign.setVisibility(View.VISIBLE);
-
-                try {
-                    year = Integer.parseInt(textInEditText);
-                } catch (NumberFormatException e) {
-                    txtYourZodiacSignIs.setVisibility(View.VISIBLE);
-                    txtYourZodiacSignIs.setText(getString(R.string.invalid_date));
-                    txtZodiacSign.setVisibility(View.INVISIBLE);
-                }
+                int year = ensureValidBirthYear();
 
                 int input = (year + 12 * abs(year)) % 12;
 
@@ -138,5 +126,23 @@ public class ZodiacFragment extends Fragment implements View.OnClickListener {
                 startActivity(resultsIntent);
                 break;
         }
+    }
+
+    public int ensureValidBirthYear() {
+        int year = 0;
+
+        String textInEditText = edtChangeBirthYear.getText().toString();
+        txtYourZodiacSignIs.setText(getString(R.string.your_zodiac_sign_is));
+        txtZodiacSign.setVisibility(View.VISIBLE);
+
+        try {
+            year = Integer.parseInt(textInEditText);
+        } catch (NumberFormatException e) {
+            txtYourZodiacSignIs.setVisibility(View.VISIBLE);
+            txtYourZodiacSignIs.setText(getString(R.string.invalid_date));
+            txtZodiacSign.setVisibility(View.INVISIBLE);
+        }
+
+        return year;
     }
 }
