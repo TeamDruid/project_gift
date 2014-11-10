@@ -20,7 +20,7 @@ public class InterestFragment extends Fragment implements View.OnClickListener {
 
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
     private EditText interestInput;
-    private Button searchInterestsButton;
+    private Button searchInterestButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,8 +29,8 @@ public class InterestFragment extends Fragment implements View.OnClickListener {
 
         interestInput = (EditText) rootView.findViewById(R.id.interest);
 
-        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interest_ETSY);
-        searchInterestsButton.setOnClickListener(new View.OnClickListener() {
+        searchInterestButton = (Button) rootView.findViewById(R.id.search_interest_ETSY);
+        searchInterestButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
