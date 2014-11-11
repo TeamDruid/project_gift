@@ -165,7 +165,7 @@ public class Zodiac extends Fragment {
             @Override
             public void onClick(View view) {
                 if (searchKeyword == null) {
-                    Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(), "Please enter a year", Toast.LENGTH_SHORT).show();
                 }
 
                 Intent resultsIntent = new Intent(getActivity(), ResultsActivity.class);
