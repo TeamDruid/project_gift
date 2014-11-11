@@ -7,7 +7,7 @@
     android:background="@color/tan">
 
     <TextView
-        android:id="@+id/input_interests"
+        android:id="@+id/input_interest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enter_interests"
@@ -17,7 +17,7 @@
         android:textColor="@color/red"/>
 
     <EditText
-        android:id="@+id/interest1"
+        android:id="@+id/interest"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="@string/interest_hint"
@@ -25,7 +25,7 @@
         android:layout_marginTop="30dp"/>
 
     <Button
-        android:id="@+id/search_interests_ETSY"
+        android:id="@+id/search_interest_ETSY"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"

@@ -23,14 +23,17 @@ import java.util.List;
  * Created by anniedevine on 11/6/14.
  */
 public class SearchResultsFragment extends ListFragment {
-    ListView mainListView;
-    ArrayAdapter mArrayAdapter;
-    List<EtsyObjects> mResultsList = new ArrayList<EtsyObjects>();
+
     private static final String QUEUE = "queue";
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
 
+    ListView mainListView;
+    ArrayAdapter mArrayAdapter;
+    List<EtsyObjects> mResultsList = new ArrayList<EtsyObjects>();
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
         ListView myListView = getListView();
         final ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         myListView.setAdapter(adapter);
@@ -48,6 +51,7 @@ public class SearchResultsFragment extends ListFragment {
     }
 
     public class ResultsAdapter extends ArrayAdapter<EtsyObjects> {
+
         private List<EtsyObjects> searchResults;
 
         public ResultsAdapter(Context context, List<EtsyObjects> etsyObjects) {
@@ -85,6 +89,4 @@ public class SearchResultsFragment extends ListFragment {
         fragment.setArguments(results);
         return fragment;
     }
-
-
 }

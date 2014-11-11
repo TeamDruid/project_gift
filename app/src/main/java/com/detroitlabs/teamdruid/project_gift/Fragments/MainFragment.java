@@ -104,7 +104,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
 
                 final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                final Interests interests = new Interests();
+                final InterestFragment interests = new InterestFragment();
 
                 if (fragmentTransaction.isEmpty()) {
 
