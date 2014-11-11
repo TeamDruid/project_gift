@@ -2,16 +2,9 @@ package com.detroitlabs.teamdruid.project_gift.requests;
 
 import android.os.AsyncTask;
 import android.util.Log;
-<<<<<<< HEAD
-
 import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
 import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
 
-import org.json.JSONObject;
-=======
-import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
-import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
->>>>>>> upstream/master
 
 import java.io.BufferedReader;
 import java.io.IOException;
