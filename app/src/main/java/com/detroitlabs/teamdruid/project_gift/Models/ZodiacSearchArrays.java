@@ -1,7 +1,5 @@
-package com.detroitlabs.teamdruid.project_gift.Models;
+package com.detroitlabs.teamdruid.project_gift.models;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**

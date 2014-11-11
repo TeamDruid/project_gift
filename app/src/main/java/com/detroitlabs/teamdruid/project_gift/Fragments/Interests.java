@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -37,7 +37,7 @@ public class Interests extends Fragment implements View.OnClickListener {
             public void onClick(View view) {
                 String editTextString = EditText1.getText().toString();
                 if (editTextString.length() < 1) {
-                    Toast.makeText(getActivity(), "Please enter an interest first", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(), "Please enter an interest first", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent apiIntent = new Intent(getActivity(), ResultsActivity.class);
                     apiIntent.putExtra(SEARCH_KEYWORD_TAG, EditText1.getText().toString());

@@ -1,4 +1,4 @@
-package com.detroitlabs.teamdruid.project_gift.Fragments;
+package com.detroitlabs.teamdruid.project_gift.fragments;
 
 import android.app.Fragment;
 import android.graphics.Typeface;
@@ -81,15 +81,15 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
 
                 final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                final Druid druid = new Druid();
+                final DruidFragment druid = new DruidFragment();
 
                 if (fragmentTransaction.isEmpty()) {
 
                     // Commit the transaction
                     fragmentTransaction.add(R.id.container, druid);
-                    Log.v(LOG_TAG, "*********put the Druid fragment on screen");
+                    Log.v(LOG_TAG, "*********put the DruidFragment fragment on screen");
                     fragmentTransaction.commit();
-                    Log.v(LOG_TAG, "********committing the Druid fragment");
+                    Log.v(LOG_TAG, "********committing the DruidFragment fragment");
 
                 }
             }
