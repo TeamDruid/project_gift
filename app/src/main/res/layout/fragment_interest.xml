@@ -28,7 +28,6 @@
         android:id="@+id/search_interest_ETSY"
         style="@style/buttonTextColorAndSize"
         android:layout_width="200dp"
-        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/search_ETSY"
         android:layout_marginTop="60dp"
