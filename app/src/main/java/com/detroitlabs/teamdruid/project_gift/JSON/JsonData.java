@@ -1,9 +1,7 @@
 package com.detroitlabs.teamdruid.project_gift.JSON;
 
-import android.app.FragmentTransaction;
 import android.util.Log;
 
-import com.detroitlabs.teamdruid.project_gift.Fragments.SearchResultsFragment;
 import com.detroitlabs.teamdruid.project_gift.Models.EtsyObjects;
 
 import org.json.JSONArray;
