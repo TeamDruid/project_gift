@@ -92,12 +92,11 @@
 
     <Button
         android:id="@+id/search_ETSY"
+        style="@style/buttonTextColorAndSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/search_ETSY"
-        android:textSize="30sp"
-        android:textColor="@color/tan"
         android:background="@drawable/round_edge_button"/>
 
 </LinearLayout>

@@ -17,11 +17,12 @@
         <item name="android:textSize">35sp</item>
     </style>
 
-    <style name="buttonText" parent="@android:style/TextAppearance.Medium">
+    <style name="buttonTextColorAndSize">
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#f9ebd7</item>
-        <item name="android:typeface">monospace</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/tan</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>
