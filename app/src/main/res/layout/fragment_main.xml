@@ -46,7 +46,6 @@
             style="@style/buttonTextColorAndSize"
             android:id="@+id/druid_button"
             android:layout_width="30dp"
-            android:layout_height="50dp"
             android:text="Druid?"
             android:layout_weight="1"
             android:background="@drawable/round_edge_button"/>
@@ -58,10 +57,8 @@
             style="@style/buttonTextColorAndSize"
             android:id="@+id/interests_button"
             android:layout_width="30dp"
-            android:layout_height="50dp"
             android:text="Interests"
-            android:layout_weight="1"
-            android:background="@drawable/round_edge_button"/>
+            android:layout_weight="1"/>
         <TextView
             android:layout_width="2.5dp"
             android:layout_height="2.5dp"
@@ -70,10 +67,8 @@
             style="@style/buttonTextColorAndSize"
             android:id="@+id/zodiac_button"
             android:layout_width="30dp"
-            android:layout_height="50dp"
             android:text="Zodiac"
-            android:layout_weight="1"
-            android:background="@drawable/round_edge_button"/>
+            android:layout_weight="1"/>
         <TextView
             android:layout_width="2.5dp"
             android:layout_height="2.5dp"

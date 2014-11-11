@@ -24,7 +24,6 @@
             android:id="@+id/yes_druid"
             style="@style/buttonTextColorAndSize"
             android:layout_width="150dp"
-            android:layout_height="match_parent"
             android:text="@string/yes"
             android:background="@drawable/round_edge_button"/>
         <TextView
@@ -34,7 +33,6 @@
             android:id="@+id/no_druid"
             style="@style/buttonTextColorAndSize"
             android:layout_width="150dp"
-            android:layout_height="match_parent"
             android:text="@string/no"
             android:background="@drawable/round_edge_button"/>
     </LinearLayout>
