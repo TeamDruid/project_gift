@@ -1,7 +1,7 @@
 package com.detroitlabs.teamdruid.project_gift.parsers;
 
 import android.util.Log;
-import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
+import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,9 +24,9 @@ public class JsonData {
   public String mPrice;
   public String mImage;
   public String mThumbnail;
-    public ArrayList<EtsyObjects> mEtsyObjectsArrayList = new ArrayList<EtsyObjects>();
+    public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
-    EtsyObjects mEtsyObject = new EtsyObjects();
+    EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
 
     public void setSearchResults(String result){
 
@@ -34,7 +34,7 @@ public class JsonData {
 
   }
 
-    public ArrayList<EtsyObjects> parseJson(){
+    public ArrayList<EtsyObjectsModel> parseJson(){
         try{
            //take these msearchresults, convert them to a JSON Object.
             mJsonObject = new JSONObject(mSearchResults);
@@ -73,7 +73,7 @@ public class JsonData {
 
                 mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
                 mEtsyObject.setmFullSize(mImage);
-                mEtsyObjectsArrayList.add(mEtsyObject);
+                mEtsyObjectsModelArrayList.add(mEtsyObject);
             }
         }
 
@@ -81,7 +81,7 @@ public class JsonData {
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }
 
-        return mEtsyObjectsArrayList;
+        return mEtsyObjectsModelArrayList;
     }
 
 }

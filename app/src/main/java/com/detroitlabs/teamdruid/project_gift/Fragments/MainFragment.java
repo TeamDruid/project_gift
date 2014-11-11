@@ -66,12 +66,12 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
 
                 final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                final Zodiac zodiac = new Zodiac();
+                final ZodiacFragment zodiacFragment = new ZodiacFragment();
 
                 if (fragmentTransaction.isEmpty()) {
 
                     // Commit the transaction
-                    fragmentTransaction.add(R.id.container, zodiac);
+                    fragmentTransaction.add(R.id.container, zodiacFragment);
                     Log.v(LOG_TAG, "*********put the Zodiac fragment on screen");
                     fragmentTransaction.commit();
                     Log.v(LOG_TAG, "********committing the Zodiac fragment");

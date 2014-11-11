@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by elyseturner on 11/5/14.
  */
-public class EtsyObjects implements Parcelable {
+public class EtsyObjectsModel implements Parcelable {
 
     private String mTitle = "";
     private String mDescription = "";
@@ -69,10 +69,10 @@ public class EtsyObjects implements Parcelable {
         dest.writeString(this.mFullSize);
     }
 
-    public EtsyObjects() {
+    public EtsyObjectsModel() {
     }
 
-    private EtsyObjects(Parcel in) {
+    private EtsyObjectsModel(Parcel in) {
         this.mTitle = in.readString();
         this.mDescription = in.readString();
         this.mPrice = in.readString();
@@ -80,13 +80,13 @@ public class EtsyObjects implements Parcelable {
         this.mFullSize = in.readString();
     }
 
-    public static final Parcelable.Creator<EtsyObjects> CREATOR = new Parcelable.Creator<EtsyObjects>() {
-        public EtsyObjects createFromParcel(Parcel source) {
-            return new EtsyObjects(source);
+    public static final Parcelable.Creator<EtsyObjectsModel> CREATOR = new Parcelable.Creator<EtsyObjectsModel>() {
+        public EtsyObjectsModel createFromParcel(Parcel source) {
+            return new EtsyObjectsModel(source);
         }
 
-        public EtsyObjects[] newArray(int size) {
-            return new EtsyObjects[size];
+        public EtsyObjectsModel[] newArray(int size) {
+            return new EtsyObjectsModel[size];
         }
     };
 }

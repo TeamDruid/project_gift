@@ -2,17 +2,8 @@ package com.detroitlabs.teamdruid.project_gift.requests;
 
 import android.os.AsyncTask;
 import android.util.Log;
-<<<<<<< HEAD
-
 import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
-import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
-
-import org.json.JSONObject;
-=======
-import com.detroitlabs.teamdruid.project_gift.parsers.JsonData;
-import com.detroitlabs.teamdruid.project_gift.models.EtsyObjects;
->>>>>>> upstream/master
-
+import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +18,9 @@ import javax.net.ssl.HttpsURLConnection;
 public class EtsyAPI extends AsyncTask<Object, Void, String>{
 
     public interface OnDataLoadedListener {
-        public void dataLoaded(ArrayList<EtsyObjects> etsyObjectses);
+
+        public void dataLoaded(ArrayList<EtsyObjectsModel> etsyObjectsesModels);
+
     }
 
     private final String API_KEY = "&api_key=rf882apukk32kmsqamjwej8w";
@@ -78,13 +71,14 @@ public class EtsyAPI extends AsyncTask<Object, Void, String>{
     @Override
     protected void onPostExecute(String SearchResult) {
         super.onPostExecute(SearchResult);
+
         if (searchResult == null) {
             Log.v("NULL TAG", "null search results in Etsy post ex");
         }
         else {
             JsonData jsonData = new JsonData();
             jsonData.setSearchResults(searchResult);
-            ArrayList<EtsyObjects> jelly = jsonData.parseJson();
+            ArrayList<EtsyObjectsModel> jelly = jsonData.parseJson();
             onDataLoadedListener.dataLoaded(jelly);
         }
     }
