@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/gift_image"
         android:text="product name"
+        android:textColor="@color/brown"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
         android:textStyle="bold"/>

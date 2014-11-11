@@ -30,6 +30,7 @@
         android:layout_marginBottom="15dp"/>
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:orientation="horizontal"
@@ -42,10 +43,10 @@
             android:layout_height="2.5dp"
             android:layout_weight=".25"/>
         <Button
+            style="@style/buttonTextColorAndSize"
             android:id="@+id/druid_button"
             android:layout_width="30dp"
             android:layout_height="50dp"
-            android:textColor="@color/tan"
             android:text="Druid?"
             android:layout_weight="1"
             android:background="@drawable/round_edge_button"/>
@@ -54,10 +55,10 @@
             android:layout_height="2.5dp"
             android:layout_weight=".25"/>
         <Button
+            style="@style/buttonTextColorAndSize"
             android:id="@+id/interests_button"
             android:layout_width="30dp"
             android:layout_height="50dp"
-            android:textColor="@color/tan"
             android:text="Interests"
             android:layout_weight="1"
             android:background="@drawable/round_edge_button"/>
@@ -66,10 +67,10 @@
             android:layout_height="2.5dp"
             android:layout_weight=".25"/>
         <Button
+            style="@style/buttonTextColorAndSize"
             android:id="@+id/zodiac_button"
             android:layout_width="30dp"
             android:layout_height="50dp"
-            android:textColor="@color/tan"
             android:text="Zodiac"
             android:layout_weight="1"
             android:background="@drawable/round_edge_button"/>
