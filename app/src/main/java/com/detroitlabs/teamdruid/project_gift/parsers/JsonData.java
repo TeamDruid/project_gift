@@ -45,7 +45,7 @@ public class JsonData {
 
         try{
             //take above json object and say make an array from the array that exists under results tag
-            JSONArray mResultsArray = mJsonObject.getJSONArray("Results");
+            JSONArray mResultsArray = mJsonObject.getJSONArray("results");
 
 
 
