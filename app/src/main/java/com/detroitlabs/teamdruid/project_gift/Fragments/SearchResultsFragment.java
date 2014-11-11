@@ -10,12 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
 import com.detroitlabs.teamdruid.project_gift.R;
 import com.detroitlabs.teamdruid.project_gift.requests.EtsyAPI;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +21,16 @@ import java.util.List;
  * Created by anniedevine on 11/6/14.
  */
 public class SearchResultsFragment extends ListFragment {
+
+    private static final String QUEUE = "queue";
+    private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
     List<EtsyObjectsModel> mResultsList = new ArrayList<EtsyObjectsModel>();
-    private static final String QUEUE = "queue";
-    private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
         ListView myListView = getListView();
         final ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         myListView.setAdapter(adapter);
@@ -85,6 +85,4 @@ public class SearchResultsFragment extends ListFragment {
         fragment.setArguments(results);
         return fragment;
     }
-
-
 }

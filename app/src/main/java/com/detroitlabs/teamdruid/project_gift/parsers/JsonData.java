@@ -1,13 +1,10 @@
 package com.detroitlabs.teamdruid.project_gift.parsers;
 
 import android.util.Log;
-
 import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 /**

@@ -16,31 +16,30 @@ import com.detroitlabs.teamdruid.project_gift.R;
 /**
  * Created by kyleofori on 11/3/14.
  */
-public class Interests extends Fragment implements View.OnClickListener {
+public class InterestFragment extends Fragment implements View.OnClickListener {
 
-    private EditText EditText1, EditText2, EditText3;
-    Button searchInterestsButton;
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
-
+    private EditText interestInput;
+    private Button searchInterestButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_interests, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_interest, container, false);
 
-        EditText1 = (EditText) rootView.findViewById(R.id.interest1);
+        interestInput = (EditText) rootView.findViewById(R.id.interest);
 
-        searchInterestsButton = (Button) rootView.findViewById(R.id.search_interests_ETSY);
-        searchInterestsButton.setOnClickListener(new View.OnClickListener() {
+        searchInterestButton = (Button) rootView.findViewById(R.id.search_interest_ETSY);
+        searchInterestButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                String editTextString = EditText1.getText().toString();
+                String editTextString = interestInput.getText().toString();
                 if (editTextString.length() < 1) {
-                    Toast.makeText(getActivity(), "Please enter an interest first", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(), "Please enter an interest first", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent apiIntent = new Intent(getActivity(), ResultsActivity.class);
-                    apiIntent.putExtra(SEARCH_KEYWORD_TAG, EditText1.getText().toString());
+                    apiIntent.putExtra(SEARCH_KEYWORD_TAG, interestInput.getText().toString());
                     startActivity(apiIntent);
                 }
             }
