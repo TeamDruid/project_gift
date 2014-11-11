@@ -17,11 +17,9 @@ public class ResultsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
             Bundle searchKeyword = getIntent().getExtras();
             SearchResultsFragment fragInfo = new SearchResultsFragment();
             fragInfo.setArguments(searchKeyword);

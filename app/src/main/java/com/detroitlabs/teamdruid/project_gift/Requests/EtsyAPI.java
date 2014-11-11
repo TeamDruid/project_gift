@@ -8,8 +8,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import javax.net.ssl.HttpsURLConnection;
 /**
@@ -42,12 +44,13 @@ public class EtsyAPI extends AsyncTask<Object, Void, String>{
     @Override
     protected String doInBackground(Object[] objects) {
         InputStream inputStream;
-        HttpsURLConnection urlConnection;
+        HttpURLConnection urlConnection;
         try {
             StringBuilder mStringBuilder = new StringBuilder();
-            fullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + SEARCH_TERM + searchKeyword + SORTING_HAT + API_KEY;
+
+            fullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + URLEncoder.encode(SEARCH_TERM + searchKeyword, "UTF-8") + SORTING_HAT + API_KEY;
             URL mEtsyUrl = new URL(fullURL);
-            urlConnection = (HttpsURLConnection) mEtsyUrl.openConnection();
+            urlConnection = (HttpURLConnection) mEtsyUrl.openConnection();
             urlConnection.setRequestMethod("GET");
             inputStream = urlConnection.getInputStream();
             BufferedReader mBufferReader = new BufferedReader(new InputStreamReader(inputStream));
