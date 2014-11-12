@@ -1,11 +1,13 @@
 package com.detroitlabs.teamdruid.project_gift.fragments;
 
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -20,13 +22,14 @@ import java.util.List;
 /**
  * Created by anniedevine on 11/6/14.
  */
-public class SearchResultsFragment extends ListFragment {
+public class SearchResultsFragment extends ListFragment implements AdapterView.OnItemClickListener{
 
+    private static final String ETSY_OBJECT = "etsy object";
     private static final String QUEUE = "queue";
     private static final String SEARCH_KEYWORD_TAG = "search_keyword_tag";
     ListView mainListView;
     ArrayAdapter mArrayAdapter;
-    List<EtsyObjectsModel> mResultsList = new ArrayList<EtsyObjectsModel>();
+    List<EtsyObjectsModel> resultList = new ArrayList<EtsyObjectsModel>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class SearchResultsFragment extends ListFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        final ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
+        final ResultsAdapter adapter = new ResultsAdapter(getActivity(), resultList);
         ListView myListView = getListView();
 
         myListView.setAdapter(adapter);
@@ -51,6 +54,21 @@ public class SearchResultsFragment extends ListFragment {
         });
 
         etsyAPI.execute();
+    }
+
+    @Override
+    public void onItemClick(AdapterView parent, View view, int position, long id) {
+        final SingleItemViewFragment singleItemViewFragment = new SingleItemViewFragment();
+        EtsyObjectsModel thisObject = (EtsyObjectsModel) getListAdapter().getItem(position);
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+        if (fragmentTransaction.isEmpty()) {
+            Bundle bundle = new Bundle();
+            bundle.putParcelable(ETSY_OBJECT, thisObject);
+            singleItemViewFragment.setArguments(bundle);
+            fragmentTransaction.replace(R.id.container, singleItemViewFragment);
+            fragmentTransaction.commit();
+        }
     }
 
     public class ResultsAdapter extends ArrayAdapter<EtsyObjectsModel> {
@@ -81,6 +99,7 @@ public class SearchResultsFragment extends ListFragment {
 
             return rowView;
         }
+
     }
 
     //This is a way we can pass the search results from the API.
