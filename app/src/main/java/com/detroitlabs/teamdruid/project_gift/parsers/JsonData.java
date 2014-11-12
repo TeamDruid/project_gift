@@ -27,7 +27,6 @@ public class JsonData {
   public String fullSizeImage;
   public String thumbnailImage;
     public ArrayList<EtsyObjectsModel> etsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
-    public EtsyObjectsModel etsyObject = new EtsyObjectsModel();
 
     public void setSearchResults(String result){
       searchResults = result;
@@ -41,9 +40,9 @@ public class JsonData {
             Log.e("TAG PARSE", "exception in converting string to JSON");
         }
         try{
-            JSONArray mResultsArray = jsonObject.getJSONArray("Results");
+            JSONArray mResultsArray = jsonObject.getJSONArray("results");
             for(int i = 0; i < mResultsArray.length(); i++) {
-                EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
+                EtsyObjectsModel etsyObject = new EtsyObjectsModel();
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
                 title = mTitleObject.getString(TITLE_KEY);
                 etsyObject.setmTitle(title);
