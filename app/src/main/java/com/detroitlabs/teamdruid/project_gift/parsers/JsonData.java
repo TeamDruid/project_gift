@@ -11,81 +11,57 @@ import java.util.ArrayList;
  * Created by elyseturner on 11/5/14.
  */
 public class JsonData {
-  private String mSearchResults = "";
-  JSONObject mJsonObject;
+  private String searchResults = "";
+  private JSONObject jsonObject;
   private final String TITLE_KEY = "title";
   private final String DESCRIPTION_KEY = "description";
   private final String PRICE_KEY = "price";
   private final String IMAGE_KEY = "Images";
   private final String THUMBNAIL_KEY = "url_75x75";
   private final String FULL_SIZE_IMAGE_KEY = "url_570xN";
-  public String mTitle;
-  public String mDescription;
-  public String mPrice;
-  public String mImage;
-  public String mThumbnail;
-    public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
-
-    EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
-
+  public String title;
+  public String description;
+  public String price;
+  public String image;
+  public String thumbnail;
+    public ArrayList<EtsyObjectsModel> etsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
+    public EtsyObjectsModel etsyObject = new EtsyObjectsModel();
 
     public void setSearchResults(String result){
-
-      mSearchResults = result;
-
+      searchResults = result;
   }
 
     public ArrayList<EtsyObjectsModel> parseJson(){
         try{
-           //take these msearchresults, convert them to a JSON Object.
-            mJsonObject = new JSONObject(mSearchResults);
+            jsonObject = new JSONObject(searchResults);
         }
         catch(JSONException e){
             Log.e("TAG PARSE", "exception in converting string to JSON");
         }
-
         try{
-            //take above json object and say make an array from the array that exists under results tag
-            JSONArray mResultsArray = mJsonObject.getJSONArray("Results");
-
-
-
-           //run the loop that is the length of the results array (in case it's not always 25)
-
+            JSONArray mResultsArray = jsonObject.getJSONArray("Results");
             for(int i = 0; i < mResultsArray.length(); i++) {
-                //tell it to get the first array result (outer onion layer)
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
-
-                //get the title, description and price key out of the first array result (still part of outer onion)
-                mTitle = mTitleObject.getString(TITLE_KEY);
-                mEtsyObject.setmTitle(mTitle);//this part sets all of the information for the etsy object class
-
-                mDescription = mTitleObject.getString(DESCRIPTION_KEY);
-                mEtsyObject.setmDescription(mDescription);
-
-                mPrice = mTitleObject.getString(PRICE_KEY);
-                mEtsyObject.setmPrice(mPrice);
-
-                //second layer of onion, starting out with an array to get it's stuff
+                title = mTitleObject.getString(TITLE_KEY);
+                etsyObject.setmTitle(title);
+                description = mTitleObject.getString(DESCRIPTION_KEY);
+                etsyObject.setmDescription(description);
+                price = mTitleObject.getString(PRICE_KEY);
+                etsyObject.setmPrice(price);
                 JSONArray mImageArray = mTitleObject.getJSONArray(IMAGE_KEY);
                 JSONObject mImageObject = mImageArray.getJSONObject(0);
-                mThumbnail = mImageObject.getString(THUMBNAIL_KEY);
-                mEtsyObject.setmThumbnail(mThumbnail);
+                thumbnail = mImageObject.getString(THUMBNAIL_KEY);
+                etsyObject.setmThumbnail(thumbnail);
 
-                mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
-                mEtsyObject.setmFullSize(mImage);
-                mEtsyObjectsModelArrayList.add(mEtsyObject);
-
-                mEtsyObject.writeToParcel();
-
+                image = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
+                etsyObject.setmFullSize(image);
+                etsyObjectsModelArrayList.add(etsyObject);
             }
         }
-
         catch (JSONException e){
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }
-
-        return mEtsyObjectsModelArrayList;
+        return etsyObjectsModelArrayList;
     }
 
 }
