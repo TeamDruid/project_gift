@@ -59,15 +59,16 @@ public class SearchResultsFragment extends ListFragment implements AdapterView.O
     @Override
     public void onItemClick(AdapterView parent, View view, int position, long id) {
         final SingleItemViewFragment singleItemViewFragment = new SingleItemViewFragment();
-        EtsyObjectsModel thisObject = (EtsyObjectsModel) getListAdapter().getItem(position);
+        EtsyObjectsModel etsyObjectsModel = (EtsyObjectsModel) getListAdapter().getItem(position);
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 
         if (fragmentTransaction.isEmpty()) {
             Bundle bundle = new Bundle();
-            bundle.putParcelable(ETSY_OBJECT, thisObject);
+            bundle.putParcelable(ETSY_OBJECT, etsyObjectsModel);
             singleItemViewFragment.setArguments(bundle);
             fragmentTransaction.replace(R.id.container, singleItemViewFragment);
             fragmentTransaction.commit();
+
         }
     }
 
