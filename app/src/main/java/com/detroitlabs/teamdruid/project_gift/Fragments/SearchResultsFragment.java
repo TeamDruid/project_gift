@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Created by anniedevine on 11/6/14.
  */
-public class SearchResultsFragment extends ListFragment implements AdapterView.OnItemClickListener{
+public class SearchResultsFragment extends ListFragment {
 
     private static final String ETSY_OBJECT = "etsy object";
     private static final String QUEUE = "queue";
@@ -34,30 +34,11 @@ public class SearchResultsFragment extends ListFragment implements AdapterView.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return new ListView(getActivity());
-
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        final ResultsAdapter adapter = new ResultsAdapter(getActivity(), resultList);
-        ListView myListView = getListView();
-
-        myListView.setAdapter(adapter);
-        getArguments().getParcelableArrayList(QUEUE);
-        EtsyAPI etsyAPI = new EtsyAPI(getArguments().getString(SEARCH_KEYWORD_TAG), new EtsyAPI.OnDataLoadedListener() {
-            @Override
-            public void dataLoaded(ArrayList<EtsyObjectsModel> etsyObjectses) {
-                adapter.clear();
-                adapter.addAll(etsyObjectses);
-                adapter.notifyDataSetChanged();
-            }
-        });
-
-        etsyAPI.execute();
-    }
-
-    @Override
-    public void onItemClick(AdapterView parent, View view, int position, long id) {
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
         final SingleItemViewFragment singleItemViewFragment = new SingleItemViewFragment();
         EtsyObjectsModel etsyObjectsModel = (EtsyObjectsModel) getListAdapter().getItem(position);
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -70,6 +51,25 @@ public class SearchResultsFragment extends ListFragment implements AdapterView.O
             fragmentTransaction.commit();
 
         }
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        final ResultsAdapter adapter = new ResultsAdapter(getActivity(), resultList);
+        ListView myListView = getListView();
+
+        setListAdapter(adapter);
+        getArguments().getParcelableArrayList(QUEUE);
+        EtsyAPI etsyAPI = new EtsyAPI(getArguments().getString(SEARCH_KEYWORD_TAG), new EtsyAPI.OnDataLoadedListener() {
+            @Override
+            public void dataLoaded(ArrayList<EtsyObjectsModel> etsyObjectses) {
+                adapter.clear();
+                adapter.addAll(etsyObjectses);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        etsyAPI.execute();
     }
 
     public class ResultsAdapter extends ArrayAdapter<EtsyObjectsModel> {
