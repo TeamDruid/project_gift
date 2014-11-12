@@ -28,14 +28,11 @@ public class JsonData {
   public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
     public void setSearchResults(String result){
-
       mSearchResults = result;
-
   }
 
     public ArrayList<EtsyObjectsModel> parseJson(){
         try{
-           //take these msearchresults, convert them to a JSON Object.
             mJsonObject = new JSONObject(mSearchResults);
         }
         catch(JSONException e){
@@ -43,23 +40,13 @@ public class JsonData {
         }
 
         try{
-            //take above json object and say make an array from the array that exists under results tag
             JSONArray mResultsArray = mJsonObject.getJSONArray(RESULTS_KEY);
-
-
-
-           //run the loop that is the length of the results array (in case it's not always 25)
-
             for(int i = 0; i < mResultsArray.length(); i++) {
-
                 EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
 
-                //tell it to get the first array result (outer onion layer)
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
-
-                //get the title, description and price key out of the first array result (still part of outer onion)
                 mTitle = mTitleObject.getString(TITLE_KEY);
-                mEtsyObject.setmTitle(mTitle);//this part sets all of the information for the etsy object class
+                mEtsyObject.setmTitle(mTitle);
 
                 mDescription = mTitleObject.getString(DESCRIPTION_KEY);
                 mEtsyObject.setmDescription(mDescription);
@@ -67,7 +54,6 @@ public class JsonData {
                 mPrice = mTitleObject.getString(PRICE_KEY);
                 mEtsyObject.setmPrice(mPrice);
 
-                //second layer of onion, starting out with an array to get it's stuff
                 JSONArray mImageArray = mTitleObject.getJSONArray(IMAGE_KEY);
                 JSONObject mImageObject = mImageArray.getJSONObject(0);
                 mThumbnail = mImageObject.getString(THUMBNAIL_KEY);
@@ -79,7 +65,6 @@ public class JsonData {
                 mEtsyObjectsModelArrayList.add(mEtsyObject);
             }
         }
-
         catch (JSONException e){
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }
