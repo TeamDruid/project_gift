@@ -93,6 +93,7 @@
     <Button
         android:id="@+id/search_ETSY"
         style="@style/buttonTextColorAndSize"
+        android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/search_ETSY"

@@ -2,10 +2,8 @@ package com.detroitlabs.teamdruid.project_gift.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.detroitlabs.teamdruid.project_gift.fragments.MainFragment;
+import com.detroitlabs.teamdruid.project_gift.fragments.LaunchFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
 
 public class MainActivity extends Activity {
@@ -18,7 +16,7 @@ public class MainActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainFragment())
+                    .add(R.id.container, new LaunchFragment())
                     .commit();
         }
 
