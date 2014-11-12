@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class JsonData {
   private String mSearchResults = "";
   JSONObject mJsonObject;
+  private final String RESULTS_KEY = "results";
   private final String TITLE_KEY = "title";
   private final String DESCRIPTION_KEY = "description";
   private final String PRICE_KEY = "price";
@@ -22,9 +23,9 @@ public class JsonData {
   public String mTitle;
   public String mDescription;
   public String mPrice;
-  public String mImage;
   public String mThumbnail;
-    public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
+  public String mFullSize;
+  public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
     EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
 
@@ -45,7 +46,7 @@ public class JsonData {
 
         try{
             //take above json object and say make an array from the array that exists under results tag
-            JSONArray mResultsArray = mJsonObject.getJSONArray("results");
+            JSONArray mResultsArray = mJsonObject.getJSONArray(RESULTS_KEY);
 
 
 
@@ -71,8 +72,9 @@ public class JsonData {
                 mThumbnail = mImageObject.getString(THUMBNAIL_KEY);
                 mEtsyObject.setmThumbnail(mThumbnail);
 
-                mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
-                mEtsyObject.setmFullSize(mImage);
+                mFullSize = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
+                mEtsyObject.setmFullSize(mFullSize);
+
                 mEtsyObjectsModelArrayList.add(mEtsyObject);
             }
         }
