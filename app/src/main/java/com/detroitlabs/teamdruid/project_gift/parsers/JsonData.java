@@ -27,8 +27,6 @@ public class JsonData {
   public String mFullSize;
   public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
-    EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
-
     public void setSearchResults(String result){
 
       mSearchResults = result;
@@ -53,6 +51,9 @@ public class JsonData {
            //run the loop that is the length of the results array (in case it's not always 25)
 
             for(int i = 0; i < mResultsArray.length(); i++) {
+
+                EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
+
                 //tell it to get the first array result (outer onion layer)
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
 
