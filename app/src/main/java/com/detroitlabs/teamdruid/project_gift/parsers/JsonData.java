@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class JsonData {
   private String mSearchResults = "";
   JSONObject mJsonObject;
+  private final String RESULTS_KEY = "results";
   private final String TITLE_KEY = "title";
   private final String DESCRIPTION_KEY = "description";
   private final String PRICE_KEY = "price";
@@ -22,21 +23,16 @@ public class JsonData {
   public String mTitle;
   public String mDescription;
   public String mPrice;
-  public String mImage;
   public String mThumbnail;
-    public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
-
-    EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
+  public String mFullSize;
+  public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
     public void setSearchResults(String result){
-
       mSearchResults = result;
-
   }
 
     public ArrayList<EtsyObjectsModel> parseJson(){
         try{
-           //take these msearchresults, convert them to a JSON Object.
             mJsonObject = new JSONObject(mSearchResults);
         }
         catch(JSONException e){
@@ -44,20 +40,13 @@ public class JsonData {
         }
 
         try{
-            //take above json object and say make an array from the array that exists under results tag
-            JSONArray mResultsArray = mJsonObject.getJSONArray("Results");
-
-
-
-           //run the loop that is the length of the results array (in case it's not always 25)
-
+            JSONArray mResultsArray = mJsonObject.getJSONArray(RESULTS_KEY);
             for(int i = 0; i < mResultsArray.length(); i++) {
-                //tell it to get the first array result (outer onion layer)
-                JSONObject mTitleObject = mResultsArray.getJSONObject(i);
+                EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
 
-                //get the title, description and price key out of the first array result (still part of outer onion)
+                JSONObject mTitleObject = mResultsArray.getJSONObject(i);
                 mTitle = mTitleObject.getString(TITLE_KEY);
-                mEtsyObject.setmTitle(mTitle);//this part sets all of the information for the etsy object class
+                mEtsyObject.setmTitle(mTitle);
 
                 mDescription = mTitleObject.getString(DESCRIPTION_KEY);
                 mEtsyObject.setmDescription(mDescription);
@@ -65,18 +54,17 @@ public class JsonData {
                 mPrice = mTitleObject.getString(PRICE_KEY);
                 mEtsyObject.setmPrice(mPrice);
 
-                //second layer of onion, starting out with an array to get it's stuff
                 JSONArray mImageArray = mTitleObject.getJSONArray(IMAGE_KEY);
                 JSONObject mImageObject = mImageArray.getJSONObject(0);
                 mThumbnail = mImageObject.getString(THUMBNAIL_KEY);
                 mEtsyObject.setmThumbnail(mThumbnail);
 
-                mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
-                mEtsyObject.setmFullSize(mImage);
+                mFullSize = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
+                mEtsyObject.setmFullSize(mFullSize);
+
                 mEtsyObjectsModelArrayList.add(mEtsyObject);
             }
         }
-
         catch (JSONException e){
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }

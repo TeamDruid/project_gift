@@ -29,6 +29,12 @@ public class SearchResultsFragment extends ListFragment {
     List<EtsyObjectsModel> mResultsList = new ArrayList<EtsyObjectsModel>();
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return new ListView(getActivity());
+
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         final ResultsAdapter adapter = new ResultsAdapter(getActivity(), mResultsList);
         ListView myListView = getListView();
