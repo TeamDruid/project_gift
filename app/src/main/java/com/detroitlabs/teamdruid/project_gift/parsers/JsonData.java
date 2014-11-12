@@ -28,6 +28,7 @@ public class JsonData {
 
     EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
 
+
     public void setSearchResults(String result){
 
       mSearchResults = result;
@@ -74,6 +75,9 @@ public class JsonData {
                 mImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
                 mEtsyObject.setmFullSize(mImage);
                 mEtsyObjectsModelArrayList.add(mEtsyObject);
+
+                mEtsyObject.writeToParcel();
+
             }
         }
 
