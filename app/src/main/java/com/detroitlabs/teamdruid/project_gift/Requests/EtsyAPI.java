@@ -48,7 +48,7 @@ public class EtsyAPI extends AsyncTask<Object, Void, String>{
         try {
             StringBuilder mStringBuilder = new StringBuilder();
 
-            fullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + URLEncoder.encode(SEARCH_TERM + searchKeyword, "UTF-8") + SORTING_HAT + API_KEY;
+            fullURL = BASE_API + RESULT_LIMIT + INCLUDE_IMAGES + SEARCH_TERM + URLEncoder.encode(searchKeyword, "UTF-8") + SORTING_HAT + API_KEY;
             URL mEtsyUrl = new URL(fullURL);
             urlConnection = (HttpURLConnection) mEtsyUrl.openConnection();
             urlConnection.setRequestMethod("GET");

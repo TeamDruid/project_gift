@@ -11,8 +11,10 @@ import java.util.ArrayList;
  * Created by elyseturner on 11/5/14.
  */
 public class JsonData {
+
   private String searchResults = "";
   private JSONObject jsonObject;
+  private final String RESULTS_KEY = "results";
   private final String TITLE_KEY = "title";
   private final String DESCRIPTION_KEY = "description";
   private final String PRICE_KEY = "price";
@@ -22,8 +24,8 @@ public class JsonData {
   public String title;
   public String description;
   public String price;
-  public String image;
-  public String thumbnail;
+  public String fullSizeImage;
+  public String thumbnailImage;
     public ArrayList<EtsyObjectsModel> etsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
     public EtsyObjectsModel etsyObject = new EtsyObjectsModel();
 
@@ -41,6 +43,7 @@ public class JsonData {
         try{
             JSONArray mResultsArray = jsonObject.getJSONArray("Results");
             for(int i = 0; i < mResultsArray.length(); i++) {
+                EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
                 title = mTitleObject.getString(TITLE_KEY);
                 etsyObject.setmTitle(title);
@@ -50,11 +53,10 @@ public class JsonData {
                 etsyObject.setmPrice(price);
                 JSONArray mImageArray = mTitleObject.getJSONArray(IMAGE_KEY);
                 JSONObject mImageObject = mImageArray.getJSONObject(0);
-                thumbnail = mImageObject.getString(THUMBNAIL_KEY);
-                etsyObject.setmThumbnail(thumbnail);
-
-                image = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
-                etsyObject.setmFullSize(image);
+                thumbnailImage = mImageObject.getString(THUMBNAIL_KEY);
+                etsyObject.setmThumbnail(thumbnailImage);
+                fullSizeImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
+                etsyObject.setmFullSize(fullSizeImage);
                 etsyObjectsModelArrayList.add(etsyObject);
             }
         }
