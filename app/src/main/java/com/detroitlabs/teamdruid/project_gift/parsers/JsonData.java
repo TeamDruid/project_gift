@@ -11,8 +11,9 @@ import java.util.ArrayList;
  * Created by elyseturner on 11/5/14.
  */
 public class JsonData {
-  private String mSearchResults = "";
-  JSONObject mJsonObject;
+
+  private String searchResults = "";
+  private JSONObject jsonObject;
   private final String RESULTS_KEY = "results";
   private final String TITLE_KEY = "title";
   private final String DESCRIPTION_KEY = "description";
@@ -20,56 +21,48 @@ public class JsonData {
   private final String IMAGE_KEY = "Images";
   private final String THUMBNAIL_KEY = "url_75x75";
   private final String FULL_SIZE_IMAGE_KEY = "url_570xN";
-  public String mTitle;
-  public String mDescription;
-  public String mPrice;
-  public String mThumbnail;
-  public String mFullSize;
-  public ArrayList<EtsyObjectsModel> mEtsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
+  public String title;
+  public String description;
+  public String price;
+  public String fullSizeImage;
+  public String thumbnailImage;
+    public ArrayList<EtsyObjectsModel> etsyObjectsModelArrayList = new ArrayList<EtsyObjectsModel>();
 
     public void setSearchResults(String result){
-      mSearchResults = result;
+      searchResults = result;
   }
 
     public ArrayList<EtsyObjectsModel> parseJson(){
         try{
-            mJsonObject = new JSONObject(mSearchResults);
+            jsonObject = new JSONObject(searchResults);
         }
         catch(JSONException e){
             Log.e("TAG PARSE", "exception in converting string to JSON");
         }
-
         try{
-            JSONArray mResultsArray = mJsonObject.getJSONArray(RESULTS_KEY);
+            JSONArray mResultsArray = jsonObject.getJSONArray("results");
             for(int i = 0; i < mResultsArray.length(); i++) {
-                EtsyObjectsModel mEtsyObject = new EtsyObjectsModel();
-
+                EtsyObjectsModel etsyObject = new EtsyObjectsModel();
                 JSONObject mTitleObject = mResultsArray.getJSONObject(i);
-                mTitle = mTitleObject.getString(TITLE_KEY);
-                mEtsyObject.setmTitle(mTitle);
-
-                mDescription = mTitleObject.getString(DESCRIPTION_KEY);
-                mEtsyObject.setmDescription(mDescription);
-
-                mPrice = mTitleObject.getString(PRICE_KEY);
-                mEtsyObject.setmPrice(mPrice);
-
+                title = mTitleObject.getString(TITLE_KEY);
+                etsyObject.setmTitle(title);
+                description = mTitleObject.getString(DESCRIPTION_KEY);
+                etsyObject.setmDescription(description);
+                price = mTitleObject.getString(PRICE_KEY);
+                etsyObject.setmPrice(price);
                 JSONArray mImageArray = mTitleObject.getJSONArray(IMAGE_KEY);
                 JSONObject mImageObject = mImageArray.getJSONObject(0);
-                mThumbnail = mImageObject.getString(THUMBNAIL_KEY);
-                mEtsyObject.setmThumbnail(mThumbnail);
-
-                mFullSize = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
-                mEtsyObject.setmFullSize(mFullSize);
-
-                mEtsyObjectsModelArrayList.add(mEtsyObject);
+                thumbnailImage = mImageObject.getString(THUMBNAIL_KEY);
+                etsyObject.setmThumbnail(thumbnailImage);
+                fullSizeImage = mImageObject.getString(FULL_SIZE_IMAGE_KEY);
+                etsyObject.setmFullSize(fullSizeImage);
+                etsyObjectsModelArrayList.add(etsyObject);
             }
         }
         catch (JSONException e){
             Log.e("TAG RESULT ARRAY", "exception creating result array");
         }
-
-        return mEtsyObjectsModelArrayList;
+        return etsyObjectsModelArrayList;
     }
 
 }
