@@ -1,23 +1,21 @@
 package com.detroitlabs.teamdruid.project_gift.fragments;
 
-import android.app.Fragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.app.FragmentTransaction;
-import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.detroitlabs.teamdruid.project_gift.activities.MainActivity;
 import com.detroitlabs.teamdruid.project_gift.R;
+import com.detroitlabs.teamdruid.project_gift.activities.MainActivity;
 
 /**
  * Created by elyseturner on 11/4/14.
  */
-public class LaunchFragment extends Fragment {
+public class LaunchFragment extends android.support.v4.app.Fragment {
     // Font path
     private final String TITLE_FONT_PATH = "fonts/LaurenScript.ttf";
     private final String TEXT_FONT_PATH = "fonts/Walkway Bold.ttf";
@@ -59,7 +57,7 @@ public class LaunchFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                final FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                final android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 final MainFragment mainFragment = new MainFragment();
 
                 if (fragmentTransaction.isEmpty()) {
