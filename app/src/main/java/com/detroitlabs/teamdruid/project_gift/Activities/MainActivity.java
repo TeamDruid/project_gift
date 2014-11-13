@@ -1,14 +1,12 @@
 package com.detroitlabs.teamdruid.project_gift.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.FragmentActivity;
 
-import com.detroitlabs.teamdruid.project_gift.fragments.MainFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
+import com.detroitlabs.teamdruid.project_gift.fragments.LaunchFragment;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
 
     @Override
@@ -17,8 +15,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainFragment())
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new LaunchFragment())
                     .commit();
         }
 
