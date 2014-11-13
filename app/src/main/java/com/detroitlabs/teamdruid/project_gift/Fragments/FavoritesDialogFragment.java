@@ -29,10 +29,11 @@ public class FavoritesDialogFragment extends DialogFragment {
     private static ArrayList<EtsyObjectsModel> favoritesArray = new ArrayList<EtsyObjectsModel>();
     public Button deleteButton;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final FavortiesAdapter adapter = new FavortiesAdapter(getActivity());
-        listView = new ListView(getActivity());
+        listView = (ListView) inflater.inflate(R.layout.fragment_favorites_listview, container);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,7 +51,7 @@ public class FavoritesDialogFragment extends DialogFragment {
                 }
             }
         });
-        return new ListView(getActivity());
+        return listView;
     }
 
     public static EtsyObjectsModel getFavoritesItem (int position) {
