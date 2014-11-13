@@ -30,6 +30,10 @@ public class FavoritesDialogFragment extends DialogFragment {
     private static ArrayList<EtsyObjectsModel> favoritesArray = new ArrayList<EtsyObjectsModel>();
     public Button deleteButton;
 
+    @Override
+    public void dismiss() {
+        super.dismiss();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class FavoritesDialogFragment extends DialogFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int position, long id) {
                 FavoritesSingleItemViewFragment favoriteSingleItemView = new FavoritesSingleItemViewFragment();
-                EtsyObjectsModel etsyObjectsModel = (EtsyObjectsModel) listView.getAdapter().getItem(position);
+                EtsyObjectsModel etsyObjectsModel = favoritesArray.get(position);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 
                 if (fragmentTransaction.isEmpty()) {
@@ -50,6 +54,7 @@ public class FavoritesDialogFragment extends DialogFragment {
                     favoriteSingleItemView.setArguments(bundle);
                     fragmentTransaction.replace(R.id.container, favoriteSingleItemView);
                     fragmentTransaction.commit();
+                    dismiss();
                 }
             }
         });
