@@ -80,7 +80,40 @@ public class AnimalModel {
         return keyword;
     }
 
-    AnimalModel Rat = new AnimalModel("rat", context.getResources().getDrawable(R.drawable.rat),
+    AnimalModel rat = new AnimalModel("rat", context.getResources().getDrawable(R.drawable.rat),
             getRandomSearchTerm(ratTermsArray));
+
+    AnimalModel ox = new AnimalModel("ox", context.getResources().getDrawable(R.drawable.cow),
+            getRandomSearchTerm(oxTermsArray));
+
+    AnimalModel tiger = new AnimalModel("tiger", context.getResources().getDrawable(R.drawable.tiger),
+            getRandomSearchTerm(tigerTermsArray));
+
+    AnimalModel rabbit = new AnimalModel("rabbit", context.getResources().getDrawable(R.drawable.rabbit),
+            getRandomSearchTerm(rabbitTermsArray));
+
+    AnimalModel dragon = new AnimalModel("dragon", context.getResources().getDrawable(R.drawable.dragon),
+            getRandomSearchTerm(dragonTermsArray));
+
+    AnimalModel snake = new AnimalModel("snake", context.getResources().getDrawable(R.drawable.snake),
+            getRandomSearchTerm(snakeTermsArray));
+
+    AnimalModel horse = new AnimalModel("horse", context.getResources().getDrawable(R.drawable.horse),
+            getRandomSearchTerm(horseTermsArray));
+
+    AnimalModel sheep = new AnimalModel("sheep", context.getResources().getDrawable(R.drawable.ram),
+            getRandomSearchTerm(sheepTermsArray));
+
+    AnimalModel monkey = new AnimalModel("monkey", context.getResources().getDrawable(R.drawable.monkey),
+            getRandomSearchTerm(monkeyTermsArray));
+
+    AnimalModel rooster = new AnimalModel("rooster", context.getResources().getDrawable(R.drawable.rooster),
+            getRandomSearchTerm(roosterTermsArray));
+
+    AnimalModel dog = new AnimalModel("dog", context.getResources().getDrawable(R.drawable.dog),
+            getRandomSearchTerm(dogTermsArray));
+
+    AnimalModel pig = new AnimalModel("pig", context.getResources().getDrawable(R.drawable.pig),
+            getRandomSearchTerm(pigTermsArray));
 
 }
