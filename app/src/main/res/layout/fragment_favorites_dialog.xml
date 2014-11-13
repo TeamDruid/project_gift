@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:padding="5dp"
+                android:background="@color/tan">
+
+    <ImageView
+        android:id="@+id/gift_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/gift_image"
+        android:text="product name"
+        android:textColor="@color/brown"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/gift_image"
+        android:layout_below="@+id/name_text"
+        android:textColor="#808080"
+        android:text="price"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:textSize="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/delete"
+        style="@style/buttonTextColorAndSize"
+        android:focusable="false"/>
+
+</RelativeLayout>
