@@ -61,6 +61,10 @@ public class FavoritesDialogFragment extends DialogFragment {
         favoritesArray.remove(position);
     }
 
+    public static void addFavoritesItem(EtsyObjectsModel itemToAdd) {
+        favoritesArray.add(itemToAdd);
+    }
+
     public class FavortiesAdapter extends ArrayAdapter<EtsyObjectsModel> {
 
         public FavortiesAdapter(Context context) {
