@@ -1,9 +1,15 @@
 package com.detroitlabs.teamdruid.project_gift.fragments;
 
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,6 +27,24 @@ public class MainFragment extends android.support.v4.app.Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
+
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
+//        menuInflater.inflate(R.menu.main, menu);
+//        super.onCreateOptionsMenu(menu, menuInflater);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.favorites:
+//                FavoritesDialogFragment favoritesDialog = new FavoritesDialogFragment();
+//                favoritesDialog.show(getFragmentManager(), "favs");
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
