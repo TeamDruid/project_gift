@@ -95,7 +95,7 @@ public class SearchResultsFragment extends ListFragment {
 
             EtsyObjectsModel currentGift = searchResults.get(position);
             nameText.setText(currentGift.getmTitle());
-            priceText.setText(currentGift.getmPrice());
+            priceText.setText("$" + currentGift.getmPrice());
             Picasso.with(getActivity()).load(currentGift.getmThumbnail()).into(giftImage);
 
             return rowView;
