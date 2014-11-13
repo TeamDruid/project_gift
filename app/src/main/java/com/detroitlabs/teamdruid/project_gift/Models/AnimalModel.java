@@ -9,7 +9,13 @@ public class AnimalModel {
 
     private String animalName;
     private Image animalImage;
-    private String animalSearchTerms;
+    private String animalSearchTerm;
+
+    public AnimalModel(String animalName, Image animalImage, String animalSearchTerm) {
+        this.animalName = animalName;
+        this.animalImage = animalImage;
+        this.animalSearchTerm = animalSearchTerm;
+    }
 
     public String getAnimalName() {
         return animalName;
@@ -27,12 +33,12 @@ public class AnimalModel {
         this.animalImage = animalImage;
     }
 
-    public String getAnimalSearchTerms() {
-        return animalSearchTerms;
+    public String getAnimalSearchTerm() {
+        return animalSearchTerm;
     }
 
-    public void setAnimalSearchTerms(String animalSearchTerms) {
-        this.animalSearchTerms = animalSearchTerms;
+    public void setAnimalSearchTerm(String animalSearchTerm) {
+        this.animalSearchTerm = animalSearchTerm;
     }
 
     String[] ratTermsArray = {"stationery", "soap", "lip balm", "macaroon", "friendship", "mug", "laptop bag", "infinity scarf", "pet tag", "antique jewelry"};
