@@ -1,6 +1,11 @@
 package com.detroitlabs.teamdruid.project_gift.models;
 
-import android.media.Image;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+
+import com.detroitlabs.teamdruid.project_gift.R;
+
+import java.util.Random;
 
 /**
  * Created by elyseturner on 11/13/14.
@@ -8,12 +13,16 @@ import android.media.Image;
 public class AnimalModel {
 
     private String animalName;
-    private Image animalImage;
+    private Drawable animalDrawable;
     private String animalSearchTerm;
+    private String keyword;
+    private Context context;
 
-    public AnimalModel(String animalName, Image animalImage, String animalSearchTerm) {
+    public Random rand = new Random();
+
+    public AnimalModel(String animalName, Drawable animalDrawable, String animalSearchTerm) {
         this.animalName = animalName;
-        this.animalImage = animalImage;
+        this.animalDrawable = animalDrawable;
         this.animalSearchTerm = animalSearchTerm;
     }
 
@@ -25,12 +34,12 @@ public class AnimalModel {
         this.animalName = animalName;
     }
 
-    public Image getAnimalImage() {
-        return animalImage;
+    public Drawable getAnimalDrawable() {
+        return animalDrawable;
     }
 
-    public void setAnimalImage(Image animalImage) {
-        this.animalImage = animalImage;
+    public void setAnimalDrawable(Drawable animalDrawable) {
+        this.animalDrawable = animalDrawable;
     }
 
     public String getAnimalSearchTerm() {
@@ -64,4 +73,14 @@ public class AnimalModel {
     String[] dogTermsArray = {"poodle dog","secrets","love", "high end gifts", "cashmere blanket", "dog", "snuggly","travel", "journal", "business cards"};
 
     String[] pigTermsArray = {"sleep mask","optimism", "mans handkerchief", "chivalry","food", "cooking", "great job","hard work","8 ball", "work out" };
+
+    public String getRandomSearchTerm(String[] animalTermsArray) {
+        int randomIndex = rand.nextInt(animalTermsArray.length);
+        keyword = (animalTermsArray[randomIndex]);
+        return keyword;
+    }
+
+    AnimalModel Rat = new AnimalModel("rat", context.getResources().getDrawable(R.drawable.rat),
+            getRandomSearchTerm(ratTermsArray));
+
 }
