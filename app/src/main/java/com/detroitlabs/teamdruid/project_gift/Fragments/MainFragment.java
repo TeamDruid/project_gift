@@ -28,24 +28,6 @@ public class MainFragment extends android.support.v4.app.Fragment{
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-//        menuInflater.inflate(R.menu.main, menu);
-//        super.onCreateOptionsMenu(menu, menuInflater);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.favorites:
-//                FavoritesDialogFragment favoritesDialog = new FavoritesDialogFragment();
-//                favoritesDialog.show(getFragmentManager(), "favs");
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
