@@ -6,6 +6,7 @@ package com.detroitlabs.teamdruid.project_gift.models;
 public class AnimalModel {
 
     private String animalName;
+    private String animalImage;
     private String animalSearchTerms;
 
     public String getAnimalName() {
@@ -14,6 +15,14 @@ public class AnimalModel {
 
     public void setAnimalName(String animalName) {
         this.animalName = animalName;
+    }
+
+    public String getAnimalImage() {
+        return animalImage;
+    }
+
+    public void setAnimalImage(String animalImage) {
+        this.animalImage = animalImage;
     }
 
     public String getAnimalSearchTerms() {
