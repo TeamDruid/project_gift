@@ -33,7 +33,7 @@ public class SingleItemViewFragment extends Fragment {
         EtsyObjectsModel etsyObjectsModelBundle = getArguments().getParcelable(ETSY_OBJECT);
         titleView.setText(etsyObjectsModelBundle.getmTitle());
         descriptionView.setText(etsyObjectsModelBundle.getmDescription());
-        priceView.setText(etsyObjectsModelBundle.getmPrice());
+        priceView.setText("$" + etsyObjectsModelBundle.getmPrice());
         Picasso.with(getActivity()).load(etsyObjectsModelBundle.getmFullSize()).into(imageView);
 
     return rootview;

@@ -1,9 +1,13 @@
 package com.detroitlabs.teamdruid.project_gift.fragments;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,6 +32,24 @@ public class MainFragment extends Fragment {
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     public MainFragment() {
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
+        menuInflater.inflate(R.menu.main, menu);
+        super.onCreateOptionsMenu(menu, menuInflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.favorites:
+                FavoritesDialogFragment favoritesDialog = new FavoritesDialogFragment();
+                favoritesDialog.show(getFragmentManager(), "favs");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

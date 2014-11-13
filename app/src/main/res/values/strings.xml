@@ -28,6 +28,8 @@
     <string name="enter_interests">What is the gift recipient\'s top interest?</string>
     <string name="search_ETSY">Search Etsy</string>
     <string name="interest_hint">Enter interest here</string>
+    <string name="delete">Delete</string>
+    <string name="remove">Remove from favorites</string>
 
 
 
