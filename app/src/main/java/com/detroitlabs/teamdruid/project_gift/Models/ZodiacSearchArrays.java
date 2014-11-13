@@ -6,6 +6,9 @@ import java.util.Random;
  * Created by elyseturner on 11/4/14.
  */
 public class ZodiacSearchArrays {
+
+
+    //private list of animals, create an animal model, in constructor ... new animal name = ...
     Random rand = new Random();
     private String keyWord;
 
