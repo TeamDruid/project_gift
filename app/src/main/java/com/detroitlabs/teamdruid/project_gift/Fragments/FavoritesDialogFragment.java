@@ -25,6 +25,7 @@ import java.util.ArrayList;
  */
 public class FavoritesDialogFragment extends DialogFragment {
     private final String FAVORITES_POSITION = "favorites position";
+    private final String FAVORITES_ITEM = "favorites item";
     private ListView listView;
     private static ArrayList<EtsyObjectsModel> favoritesArray = new ArrayList<EtsyObjectsModel>();
     public Button deleteButton;
@@ -44,6 +45,7 @@ public class FavoritesDialogFragment extends DialogFragment {
 
                 if (fragmentTransaction.isEmpty()) {
                     Bundle bundle = new Bundle();
+                    bundle.putParcelable(FAVORITES_ITEM, etsyObjectsModel);
                     bundle.putInt(FAVORITES_POSITION, position);
                     favoriteSingleItemView.setArguments(bundle);
                     fragmentTransaction.replace(R.id.container, favoriteSingleItemView);
@@ -94,7 +96,8 @@ public class FavoritesDialogFragment extends DialogFragment {
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    favoritesArray.remove(listView.getAdapter().getItem(position));
+                    removeFavoritesItem(position);
+                    notifyDataSetChanged();
                 }
             });
 
