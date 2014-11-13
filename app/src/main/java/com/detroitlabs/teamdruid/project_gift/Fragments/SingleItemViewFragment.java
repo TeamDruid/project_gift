@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.detroitlabs.teamdruid.project_gift.R;
 import com.detroitlabs.teamdruid.project_gift.models.EtsyObjectsModel;
@@ -43,6 +44,7 @@ public class SingleItemViewFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FavoritesDialogFragment.addFavoritesItem(etsyObjectsModelBundle);
+                Toast.makeText(getActivity(), "Added to favorites.", Toast.LENGTH_SHORT).show();
             }
         });
 

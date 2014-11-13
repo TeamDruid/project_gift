@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.detroitlabs.teamdruid.project_gift.fragments.FavoritesDialogFragment;
 import com.detroitlabs.teamdruid.project_gift.fragments.SearchResultsFragment;
 import com.detroitlabs.teamdruid.project_gift.R;
 
@@ -13,6 +14,12 @@ import com.detroitlabs.teamdruid.project_gift.R;
  * Created by anniedevine on 11/6/14.
  */
 public class ResultsActivity extends Activity {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.results, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,4 +35,15 @@ public class ResultsActivity extends Activity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.favorites:
+                FavoritesDialogFragment favoritesDialog = new FavoritesDialogFragment();
+                favoritesDialog.show(getFragmentManager(), "favs");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

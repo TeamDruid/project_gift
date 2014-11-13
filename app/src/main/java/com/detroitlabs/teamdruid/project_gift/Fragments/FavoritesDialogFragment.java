@@ -32,6 +32,7 @@ public class FavoritesDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final FavortiesAdapter adapter = new FavortiesAdapter(getActivity());
+        listView = new ListView(getActivity());
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
