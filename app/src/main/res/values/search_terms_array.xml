@@ -24,9 +24,27 @@
             >antique jewelry</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="ox_terms">
         <item
-            >text_string</item>
+            >@string/journal</item>
+        <item
+            >@string/farm</item>
+        <item
+            >@string/hand_quilted</item>
+        <item
+            >@string/embroidery</item>
+        <item
+            >@string/jigsaw_puzzle</item>
+        <item
+            >@string/candle</item>
+        <item
+            >@string/plants</item>
+        <item
+            >@string/tea</item>
+        <item
+            >@string/beer_kit</item>
+        <item
+            >@string/canned_goods</item>
     </string-array>
     <string-array
         name="search_terms">
