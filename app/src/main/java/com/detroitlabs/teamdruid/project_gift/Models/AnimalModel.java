@@ -71,7 +71,7 @@ public class AnimalModel {
         return keyword;
     }
 
-    AnimalModel rat = new AnimalModel(res.getString(R.string.rat),
+    public AnimalModel rat = new AnimalModel(res.getString(R.string.rat),
             res.getDrawable(R.drawable.rat),
             getRandomSearchTerm(ratTermsArray));
 
