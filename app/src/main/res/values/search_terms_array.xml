@@ -26,25 +26,25 @@
     <string-array
         name="ox_terms">
         <item
-            >@string/journal</item>
+            >journal</item>
         <item
-            >@string/farm</item>
+            >farm</item>
         <item
-            >@string/hand_quilted</item>
+            >hand_quilted</item>
         <item
-            >@string/embroidery</item>
+            >embroidery</item>
         <item
-            >@string/jigsaw_puzzle</item>
+            >jigsaw_puzzle</item>
         <item
-            >@string/candle</item>
+            >candle</item>
         <item
-            >@string/plants</item>
+            >plants</item>
         <item
-            >@string/tea</item>
+            >tea</item>
         <item
-            >@string/beer_kit</item>
+            >beer_kit</item>
         <item
-            >@string/canned_goods</item>
+            >canned_goods</item>
     </string-array>
     <string-array
         name="search_terms">

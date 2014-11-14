@@ -31,16 +31,7 @@
     <string name="delete">Delete</string>
     <string name="remove">Remove from favorites</string>
     <string name="add_to_favortie">Add to favorites</string>
-    <string name="journal">journal</string>
-    <string name="farm">farm</string>
-    <string name="hand_quilted">hand quilted</string>
-    <string name="embroidery">embroidery</string>
-    <string name="jigsaw_puzzle">jigsaw puzzle</string>
-    <string name="candle">candle</string>
-    <string name="plants">plants</string>
-    <string name="tea">tea</string>
-    <string name="beer_kit">beer kit</string>
-    <string name="canned_goods">canned goods</string>
+
 
 
 </resources>
