@@ -71,40 +71,52 @@ public class AnimalModel {
         return keyword;
     }
 
-    AnimalModel rat = new AnimalModel("rat", context.getResources().getDrawable(R.drawable.rat),
+    AnimalModel rat = new AnimalModel(res.getString(R.string.rat),
+            res.getDrawable(R.drawable.rat),
             getRandomSearchTerm(ratTermsArray));
 
-    AnimalModel ox = new AnimalModel("ox", context.getResources().getDrawable(R.drawable.cow),
+    AnimalModel ox = new AnimalModel(res.getString(R.string.ox),
+            res.getDrawable(R.drawable.cow),
             getRandomSearchTerm(oxTermsArray));
 
-    AnimalModel tiger = new AnimalModel("tiger", context.getResources().getDrawable(R.drawable.tiger),
+    AnimalModel tiger = new AnimalModel(res.getString(R.string.tiger),
+            res.getDrawable(R.drawable.tiger),
             getRandomSearchTerm(tigerTermsArray));
 
-    AnimalModel rabbit = new AnimalModel("rabbit", context.getResources().getDrawable(R.drawable.rabbit),
+    AnimalModel rabbit = new AnimalModel(res.getString(R.string.rabbit),
+            res.getDrawable(R.drawable.rabbit),
             getRandomSearchTerm(rabbitTermsArray));
 
-    AnimalModel dragon = new AnimalModel("dragon", context.getResources().getDrawable(R.drawable.dragon),
+    AnimalModel dragon = new AnimalModel(res.getString(R.string.dragon),
+            res.getDrawable(R.drawable.dragon),
             getRandomSearchTerm(dragonTermsArray));
 
-    AnimalModel snake = new AnimalModel("snake", context.getResources().getDrawable(R.drawable.snake),
+    AnimalModel snake = new AnimalModel(res.getString(R.string.snake),
+            res.getDrawable(R.drawable.snake),
             getRandomSearchTerm(snakeTermsArray));
 
-    AnimalModel horse = new AnimalModel("horse", context.getResources().getDrawable(R.drawable.horse),
+    AnimalModel horse = new AnimalModel(res.getString(R.string.horse),
+            res.getDrawable(R.drawable.horse),
             getRandomSearchTerm(horseTermsArray));
 
-    AnimalModel sheep = new AnimalModel("sheep", context.getResources().getDrawable(R.drawable.ram),
+    AnimalModel sheep = new AnimalModel(res.getString(R.string.sheep),
+            res.getDrawable(R.drawable.ram),
             getRandomSearchTerm(sheepTermsArray));
 
-    AnimalModel monkey = new AnimalModel("monkey", context.getResources().getDrawable(R.drawable.monkey),
+    AnimalModel monkey = new AnimalModel(res.getString(R.string.monkey),
+            res.getDrawable(R.drawable.monkey),
             getRandomSearchTerm(monkeyTermsArray));
 
-    AnimalModel rooster = new AnimalModel("rooster", context.getResources().getDrawable(R.drawable.rooster),
+    AnimalModel rooster = new AnimalModel(res.getString(R.string.rooster),
+            res.getDrawable(R.drawable.rooster),
             getRandomSearchTerm(roosterTermsArray));
 
-    AnimalModel dog = new AnimalModel("dog", context.getResources().getDrawable(R.drawable.dog),
+    AnimalModel dog = new AnimalModel(res.getString(R.string.dog),
+            res.getDrawable(R.drawable.dog),
             getRandomSearchTerm(dogTermsArray));
 
-    AnimalModel pig = new AnimalModel("pig", context.getResources().getDrawable(R.drawable.pig),
+    AnimalModel pig = new AnimalModel(res.getString(R.string.pig),
+            res.getDrawable(R.drawable.pig),
             getRandomSearchTerm(pigTermsArray));
 
 }
