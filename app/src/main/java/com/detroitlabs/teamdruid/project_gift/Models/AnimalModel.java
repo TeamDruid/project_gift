@@ -1,6 +1,7 @@
 package com.detroitlabs.teamdruid.project_gift.models;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
 import com.detroitlabs.teamdruid.project_gift.R;
@@ -50,7 +51,8 @@ public class AnimalModel {
         this.animalSearchTerm = animalSearchTerm;
     }
 
-    String[] ratTermsArray = {"stationery", "soap", "lip balm", "macaroon", "friendship", "mug", "laptop bag", "infinity scarf", "pet tag", "antique jewelry"};
+    Resources res = context.getResources();
+    String[] ratTermsArray = res.getStringArray(R.array.rat_terms);
 
     String[] oxTermsArray = {"journal", "farm", "hand quilted", "embroidery", "jigsaw puzzle", "candle", "plants", "tea", "beer kit", "canned goods"};
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="rat_terms">
+        <item
+            >stationery</item>
+        <item
+            >soap</item>
+        <item
+            >lip balm</item>
+        <item
+            >macaroon</item>
+        <item
+            >friendship</item>
+        <item
+            >mug</item>
+        <item
+            >laptop bag</item>
+        <item
+            >infinity scarf</item>
+        <item
+            >pet tag</item>
+        <item
+            >antique jewelry</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+    <string-array
+        name="search_terms">
+        <item
+            >text_string</item>
+    </string-array>
+</resources>
