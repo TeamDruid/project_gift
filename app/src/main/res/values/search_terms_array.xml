@@ -30,11 +30,11 @@
         <item
             >farm</item>
         <item
-            >hand_quilted</item>
+            >hand quilted</item>
         <item
             >embroidery</item>
         <item
-            >jigsaw_puzzle</item>
+            >jigsaw puzzle</item>
         <item
             >candle</item>
         <item
@@ -42,58 +42,238 @@
         <item
             >tea</item>
         <item
-            >beer_kit</item>
+            >beer kit</item>
         <item
             >canned_goods</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="tiger_terms">
         <item
-            >text_string</item>
+            >picture frame</item>
+        <item
+            >politics</item>
+        <item
+            >notebook</item>
+        <item
+            >pen</item>
+        <item
+            >book</item>
+        <item
+            >organization</item>
+        <item
+            >leather bag</item>
+        <item
+            >mirror</item>
+        <item
+            >iPhone cover</item>
+        <item
+            >liquor</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="rabbit_terms">
         <item
-            >text_string</item>
+            >feelings</item>
+        <item
+            >color</item>
+        <item
+            >decorative</item>
+        <item
+            >pretty</item>
+        <item
+            >locket</item>
+        <item
+            >pocket watch</item>
+        <item
+            >landscape</item>
+        <item
+            >paris</item>
+        <item
+            >diary</item>
+        <item
+            >gold</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="dragon_terms">
         <item
-            >text_string</item>
+            >computers</item>
+        <item
+            >inventor</item>
+        <item
+            >leader</item>
+        <item
+            >roller skates</item>
+        <item
+            >bike helmet</item>
+        <item
+            >diary</item>
+        <item
+            >stickers</item>
+        <item
+            >hat</item>
+        <item
+            >glitter pen</item>
+        <item
+            >jewelry box</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="snake_terms">
         <item
-            >text_string</item>
+            >inspirational quotes</item>
+        <item
+            >story book</item>
+        <item
+            >stress ball</item>
+        <item
+            >headphones</item>
+        <item
+            >orchid</item>
+        <item
+            >cactus</item>
+        <item
+            >pottery</item>
+        <item
+            >paint</item>
+        <item
+            >dreamcatcher</item>
+        <item
+            >video games</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="horse_terms">
         <item
-            >text_string</item>
+            >panda</item>
+        <item
+            >woodworking</item>
+        <item
+            >basketball</item>
+        <item
+            >shiny tank top</item>
+        <item
+            >butterfly clips</item>
+        <item
+            >joke book</item>
+        <item
+            >smiley face</item>
+        <item
+            >teddy bear</item>
+        <item
+            >saddle</item>
+        <item
+            >custom riding boots</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="sheep_terms">
         <item
-            >text_string</item>
+            >wool coat</item>
+        <item
+            >wool socks</item>
+        <item
+            >wool hat</item>
+        <item
+            >wool sweater</item>
+        <item
+            >wool blanket</item>
+        <item
+            >bah bah black sheep</item>
+        <item
+            >wool yarn</item>
+        <item
+            >irish wool</item>
+        <item
+            >smart wool</item>
+        <item
+            >wool</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="monkey_terms">
         <item
-            >text_string</item>
+            >football</item>
+        <item
+            >musical</item>
+        <item
+            >puzzle</item>
+        <item
+            >phone</item>
+        <item
+            >wilderness</item>
+        <item
+            >outdoors</item>
+        <item
+            >jokes</item>
+        <item
+            >basketball</item>
+        <item
+            >chrysanthemum</item>
+        <item
+            >science</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="rooster_terms">
         <item
-            >text_string</item>
+            >gemstone rings</item>
+        <item
+            >cashmere</item>
+        <item
+            >leather journal</item>
+        <item
+            >gold bar necklace</item>
+        <item
+            >watches</item>
+        <item
+            >bookshelf</item>
+        <item
+            >workout</item>
+        <item
+            >mirrors</item>
+        <item
+            >lucky number 7</item>
+        <item
+            >organization</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="dog_terms">
         <item
-            >text_string</item>
+            >poodle dog</item>
+        <item
+            >secrets</item>
+        <item
+            >love</item>
+        <item
+            >high end gifts</item>
+        <item
+            >cashmere blanket</item>
+        <item
+            >dog</item>
+        <item
+            >snuggly</item>
+        <item
+            >travel</item>
+        <item
+            >journal</item>
+        <item
+            >business cards</item>
     </string-array>
     <string-array
-        name="search_terms">
+        name="pig_terms">
         <item
-            >text_string</item>
+            >sleep mask</item>
+        <item
+            >optimism</item>
+        <item
+            >man's handkerchief</item>
+        <item
+            >chivalry</item>
+        <item
+            >food</item>
+        <item
+            >cooking</item>
+        <item
+            >workout</item>
+        <item
+            >great job</item>
+        <item
+            >hard work</item>
+        <item
+            >8 ball</item>
     </string-array>
 </resources>

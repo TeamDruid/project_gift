@@ -53,9 +53,7 @@ public class AnimalModel {
 
     Resources res = context.getResources();
     String[] ratTermsArray = res.getStringArray(R.array.rat_terms);
-
-    String[] oxTermsArray = {context.getString(R.string.journal), context.getString(R.string.farm), context.getString(R.string.hand_quilted), context.getString(R.string.embroidery), context.getString(R.string.jigsaw_puzzle), context.getString(R.string.candle), context.getString(R.string.plants), context.getString(R.string.tea), context.getString(R.string.beer_kit), context.getString(R.string.canned_goods)};
-
+    String[] oxTermsArray = res.getStringArray(R.array.ox_terms);
     String[] tigerTermsArray = {"picture frame", "politics", "notebook", "pen", "book", "organization", "mirror", "leather bag", "iPhone cover", "liquor"};
 
     String[] rabbitTermsArray = {"feelings", "color", "decorative", "pretty", "locket", "pocket watch", "landscape", "paris", "diary", "gold"};
